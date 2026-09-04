@@ -77,9 +77,15 @@
                     <div id="calendar-grid" class="grid grid-cols-7 gap-1 text-center text-sm">
                         <!-- JS Calendar injection -->
                     </div>
-                    <div class="mt-5 text-xs text-slate-400 border-t border-white/10 pt-4 flex items-center justify-center gap-2">
-                        <span class="w-2 h-2 rounded-full bg-teal-400 inline-block shadow-[0_0_8px_rgba(45,212,191,0.8)]"></span>
-                        <span>Día con actividad</span>
+                    <div class="mt-5 text-xs text-slate-400 border-t border-white/10 pt-4 flex flex-col gap-2">
+                        <div class="flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-teal-400 inline-block shadow-[0_0_8px_rgba(45,212,191,0.8)]"></span>
+                            <span>Día con actividad</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-blue-500 inline-block shadow-[0_0_8px_rgba(59,130,246,0.8)]"></span>
+                            <span>Clase actual o próxima</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -113,7 +119,7 @@
     </div>
 
     <script>
-        // Data derived from the PDF content
+        // Data derived from the PDF content (Actualizado con Maestros)
         const planData = [
             // JULIO - AGOSTO
             {
@@ -123,7 +129,8 @@
                 debate: "¿Si estuvieran en un juicio, qué pruebas darían de que la resurrección no es un mito como Thor o Zeus?",
                 razon: "El cristianismo se basa en evidencias. Los discípulos pasaron de cobardes a morir por su fe; nadie se deja torturar por algo que sabe que es mentira.",
                 desafio: "Desafiarlos a investigar. Tarea: Preguntarle a un adulto de confianza por qué cree en Dios.",
-                type: "class"
+                type: "class",
+                maestros: { pre: "Gerardo y Jessie / Josué y Natalia", ado: "Felipe y Daniela / Fabián y Eugenia" }
             },
             {
                 date: "2026-08-07", month: "Julio y Agosto: Los Inicios y el Poder",
@@ -132,7 +139,8 @@
                 debate: '¿Qué hacemos con la gente que dice "yo nunca siento a Dios"? ¿El Espíritu Santo es una emoción?',
                 razon: "Leer Hechos 2:1-13. El Espíritu bajó para darles poder y valentía, no solo una experiencia emocional. Es un ayudador práctico para el día a día.",
                 desafio: 'Identificar un área donde son "cobardes" (hablar de Jesús, enfrentar una mala amistad) y pedirle valentía al Espíritu Santo.',
-                type: "class"
+                type: "class",
+                maestros: { pre: "Fabián y Eugenia / Gerardo y Jessie", ado: "Josué y Natalia / Felipe y Daniela" }
             },
             {
                 date: "2026-08-14", month: "Julio y Agosto: Los Inicios y el Poder",
@@ -141,7 +149,8 @@
                 debate: "¿Por qué no podemos simplemente ser cristianos en la casa, viendo prédicas por YouTube?",
                 razon: "La fe cristiana es un deporte de equipo. Una brasa sola se apaga rápido; junta con otras, hace una fogata.",
                 desafio: "Escribirle un mensaje de ánimo a alguien del grupo que no haya asistido ese día.",
-                type: "class"
+                type: "class",
+                maestros: { pre: "Felipe y Daniela / Gerardo y Jessie", ado: "Fabián y Eugenia / Josué y Natalia" }
             },
             {
                 date: "2026-08-21", month: "Julio y Agosto: Los Inicios y el Poder",
@@ -150,13 +159,15 @@
                 debate: "Si Dios curó a un cojo hace 2000 años, ¿por qué no sana a todos los enfermos hoy?",
                 razon: "El milagro apuntaba a Jesús. Dios sigue sanando, pero a veces su milagro es darnos paz en la enfermedad. El mayor milagro es la salvación.",
                 desafio: "Orar en grupos pequeños por una petición real y difícil de su familia.",
-                type: "class"
+                type: "class",
+                maestros: { pre: "Josué y Natalia / Gerardo y Jessie", ado: "Felipe y Daniela / Fabián y Eugenia" }
             },
             {
                 date: "2026-08-28", month: "Julio y Agosto: Los Inicios y el Poder",
                 title: "Actividad conjunta con los Jóvenes",
                 desc: "Jornada de Integración.",
-                type: "event", icon: "fa-users"
+                type: "event", icon: "fa-users",
+                maestros: "Todos los maestros"
             },
             // SEPTIEMBRE
             {
@@ -166,19 +177,22 @@
                 debate: "Si mañana fuera ilegal ser cristiano en tu colegio, ¿habría suficientes pruebas en tu comportamiento para acusarte?",
                 razon: 'Pedro y Juan eran amenazados por los "populares". Su secreto: "habían estado con Jesús" (v. 13). La comunión privada da valentía pública.',
                 desafio: "Tomar una decisión firme de no participar en algo incorrecto esta semana aunque haya presión de grupo.",
-                type: "class"
+                type: "class",
+                maestros: { pre: "Gerardo y Jessie / Josué y Natalia", ado: "Fabián y Eugenia / Felipe y Daniela" }
             },
             {
                 date: "2026-09-11", month: "Septiembre: Desafíos Internos y Externos",
                 title: "Visita al Templo",
                 desc: "Servicio General de la Iglesia.",
-                type: "event", icon: "fa-church"
+                type: "event", icon: "fa-church",
+                maestros: "Todos los maestros"
             },
             {
                 date: "2026-09-18", month: "Septiembre: Desafíos Internos y Externos",
                 title: "Feriado Nacional",
                 desc: "Fiestas Patrias. No hay actividad regular.",
-                type: "event", icon: "fa-flag"
+                type: "event", icon: "fa-flag",
+                maestros: "Sin actividad"
             },
             {
                 date: "2026-09-25", month: "Septiembre: Desafíos Internos y Externos",
@@ -187,7 +201,8 @@
                 debate: "Si Dios conoce nuestros errores, ¿por qué castigó tan duro a Ananías y Safira?",
                 razon: "Querían aparentar ser más santos de lo que eran. A Dios le molesta la hipocresía más que la debilidad (Ej: fingir en redes sociales).",
                 desafio: "Confesar en oración un área donde están aparentando ser lo que no son.",
-                type: "class"
+                type: "class",
+                maestros: { pre: "Felipe y Daniela / Gerardo y Jessie", ado: "Josué y Natalia / Fabián y Eugenia" }
             },
             // OCTUBRE
             {
@@ -197,7 +212,8 @@
                 debate: '¿Alguna vez te has quedado callado ante el bullying por miedo a que te "cancelen"?',
                 razon: "Esteban dijo la verdad a pesar del miedo y perdonó a sus agresores. Ser valiente es hacer lo correcto aunque asuste.",
                 desafio: "Defender a alguien en el colegio que esté siendo molestado esta semana.",
-                type: "class"
+                type: "class",
+                maestros: { pre: "Gerardo y Jessie / Josué y Natalia", ado: "Fabián y Eugenia / Felipe y Daniela" }
             },
             {
                 date: "2026-10-09", month: "Octubre: Valentía y Rompiendo Moldes",
@@ -206,7 +222,8 @@
                 debate: '¿Alguien puede ser "demasiado malo" para que Dios lo cambie?',
                 razon: 'Saulo era el "hater" principal. Dios no miró lo que era, sino en lo que se convertiría.',
                 desafio: "Anotar el nombre del compañero más alejado de Dios y comprometerse a orar por él.",
-                type: "class"
+                type: "class",
+                maestros: { pre: "Josué y Natalia / Gerardo y Jessie", ado: "Felipe y Daniela / Fabián y Eugenia" }
             },
             {
                 date: "2026-10-16", month: "Octubre: Valentía y Rompiendo Moldes",
@@ -215,13 +232,15 @@
                 debate: "¿Nosotros discriminamos por ropa, dinero o gustos sin darnos cuenta?",
                 razon: "Pedro rompió sus esquemas racistas. El evangelio es para el popular y el marginado por igual.",
                 desafio: "Acercarse a almorzar o hablar en el recreo con alguien que siempre está solo.",
-                type: "class"
+                type: "class",
+                maestros: { pre: "Gerardo y Jessie / Felipe y Daniela", ado: "Fabián y Eugenia / Josué y Natalia" }
             },
             {
                 date: "2026-10-23", month: "Octubre: Valentía y Rompiendo Moldes",
                 title: "Actividad Lúdica",
                 desc: "Juegos en equipo e integración.",
-                type: "event", icon: "fa-gamepad"
+                type: "event", icon: "fa-gamepad",
+                maestros: "Todos los maestros"
             },
             {
                 date: "2026-10-30", month: "Octubre: Valentía y Rompiendo Moldes",
@@ -230,7 +249,8 @@
                 debate: "¿Qué tiene de malo Halloween si solo es un juego de niños?",
                 razon: "En Éfeso se dieron cuenta de que lo oculto es real, no un juego. Somos hijos de luz; celebramos la vida, no el terror.",
                 desafio: 'Planificar cómo ser "luz" este 31 de octubre (noche de juegos sana, etc.).',
-                type: "class"
+                type: "class",
+                maestros: { pre: "Josué y Natalia / Gerardo y Jessie", ado: "Felipe y Daniela / Fabián y Eugenia" }
             },
             // NOVIEMBRE
             {
@@ -240,7 +260,8 @@
                 debate: "Pedro iba a ser ejecutado pero dormía profundo. ¿Cómo no desesperarse ante un problema gigante?",
                 razon: "Sabía que su vida estaba en manos de Dios y estaba respaldado por oraciones.",
                 desafio: 'Escribir su mayor preocupación actual, entregarla a Dios y decidir "dormir tranquilos".',
-                type: "class"
+                type: "class",
+                maestros: { pre: "Gerardo y Jessie / Josué y Natalia", ado: "Fabián y Eugenia / Felipe y Daniela" }
             },
             {
                 date: "2026-11-13", month: "Noviembre: Emociones y Realidad",
@@ -249,7 +270,8 @@
                 debate: "Pablo y Bernabé se pelearon fuerte. ¿Qué pasa cuando nos decepciona un amigo cristiano?",
                 razon: "La Biblia es realista; los cristianos se pelean. El enojo es humano, pero el perdón es cristiano. (Pablo luego se reconcilió).",
                 desafio: "Perdonar a un amigo o pedir perdón si ellos fallaron.",
-                type: "class"
+                type: "class",
+                maestros: { pre: "Felipe y Daniela / Fabián y Eugenia", ado: "Felipe y Daniela / Fabián y Eugenia" }
             },
             {
                 date: "2026-11-20", month: "Noviembre: Emociones y Realidad",
@@ -258,7 +280,8 @@
                 debate: "Si estás triste o pasaste un mal día, ¿es hipócrita cantar en la iglesia?",
                 razon: "Su alabanza en la cárcel no era por emoción, era un arma de guerra que rompió cadenas.",
                 desafio: "Cantar una alabanza en casa en un momento de tristeza o enojo esta semana.",
-                type: "class"
+                type: "class",
+                maestros: { pre: "Gerardo y Jessie / Felipe y Daniela", ado: "Fabián y Eugenia / Josué y Natalia" }
             },
             {
                 date: "2026-11-27", month: "Noviembre: Emociones y Realidad",
@@ -267,7 +290,8 @@
                 debate: "Los ateos dicen que la Biblia es para ignorantes. ¿Se puede ser científico y cristiano?",
                 razon: "Pablo debatió con filósofos griegos usando lógica y ciencia. Dios es el creador de la mente.",
                 desafio: "Aprender un argumento histórico o científico rápido en defensa de la fe.",
-                type: "class"
+                type: "class",
+                maestros: { pre: "Josué y Natalia / Gerardo y Jessie", ado: "Felipe y Daniela / Fabián y Eugenia" }
             },
             // DICIEMBRE
             {
@@ -277,13 +301,15 @@
                 debate: 'Eutico se durmió en el sermón. Honestamente, ¿qué los aburre de la iglesia?',
                 razon: '"Dormirse espiritualmente" produce caídas. Dios nos renueva cuando servimos, no cuando somos meros espectadores.',
                 desafio: "Comprometerse a tomar notas del sermón o servir activamente.",
-                type: "class"
+                type: "class",
+                maestros: { pre: "Gerardo y Jessie / Josué y Natalia", ado: "Fabián y Eugenia / Felipe y Daniela" }
             },
             {
                 date: "2026-12-11", month: "Diciembre: Cierre y Envío",
                 title: "Visita al Templo",
                 desc: "Servicio General. Participación de pre-adolescentes.",
-                type: "event", icon: "fa-church"
+                type: "event", icon: "fa-church",
+                maestros: "Todos los maestros"
             },
             {
                 date: "2026-12-18", month: "Diciembre: Cierre y Envío",
@@ -292,9 +318,22 @@
                 debate: 'Hechos termina de golpe, sin decir "Amén". ¿Por qué Lucas lo dejó por la mitad?',
                 razon: "Porque la historia no terminó. Ellos son Hechos capítulo 29.",
                 desafio: 'Firmar un "pergamino" comprometiéndose a escribir el próximo capítulo de la historia de la iglesia con sus vidas. (Servicio final: Limpieza profunda del salón).',
-                type: "class"
+                type: "class",
+                maestros: { pre: "Josué y Natalia / Gerardo y Jessie", ado: "Felipe y Daniela / Fabián y Eugenia" }
             }
         ];
+
+        // Detección automática de la fecha actual
+        const today = new Date();
+        const localDate = new Date(today.getTime() - (today.getTimezoneOffset() * 60000));
+        const todayStr = localDate.toISOString().split('T')[0];
+        
+        // Encontrar el evento actual o el próximo más cercano
+        let activeEvent = planData.find(e => e.date === todayStr) || planData.find(e => e.date > todayStr);
+        if (!activeEvent) activeEvent = planData[planData.length - 1]; // Si ya terminó el semestre, muestra el último
+
+        let currentMonth = parseInt(activeEvent.date.split('-')[1]) - 1;
+        let currentYear = parseInt(activeEvent.date.split('-')[0]);
 
         function renderTimeline() {
             const container = document.getElementById('timeline-container');
@@ -318,15 +357,61 @@
                 `;
 
                 events.forEach(event => {
-                    const dateObj = new Date(event.date + "T12:00:00"); // Force mid-day to avoid timezone shifting
+                    const dateObj = new Date(event.date + "T12:00:00"); 
                     const formattedDate = dateObj.toLocaleDateString('es-ES', { day: 'numeric', month: 'long' });
                     const id = `event-${event.date}`;
 
+                    // Lógica para resaltar si es hoy o es el próximo
+                    const isToday = event.date === todayStr;
+                    const isUpcoming = activeEvent && event.date === activeEvent.date;
+                    
+                    let highlightClasses = "";
+                    let badgeHtml = "";
+                    
+                    if (isToday) {
+                        highlightClasses = "ring-2 ring-teal-400 ring-offset-2 ring-offset-slate-950";
+                        badgeHtml = `<span class="bg-teal-500 text-slate-900 text-xs font-bold px-3 py-1 rounded-full animate-pulse shadow-[0_0_10px_rgba(45,212,191,0.6)]">¡HOY!</span>`;
+                    } else if (isUpcoming && event.date > todayStr) {
+                        highlightClasses = "border-blue-500/60 shadow-[0_0_15px_rgba(59,130,246,0.15)] bg-slate-900/80";
+                        badgeHtml = `<span class="bg-blue-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-[0_0_10px_rgba(59,130,246,0.5)]">PRÓXIMA</span>`;
+                    }
+
+                    // Construcción del HTML de Maestros
+                    let maestrosHtml = '';
+                    if (event.maestros) {
+                        if (typeof event.maestros === 'string') {
+                            maestrosHtml = `<div class="mt-4 pt-4 border-t border-white/10 flex items-center gap-2 text-sm text-slate-300">
+                                                <i class="fa-solid fa-chalkboard-user text-teal-400"></i> 
+                                                <span class="font-semibold text-teal-200">Asignación:</span> ${event.maestros}
+                                            </div>`;
+                        } else {
+                            maestrosHtml = `
+                            <div class="mt-5 pt-5 border-t border-white/10">
+                                <h4 class="text-sm font-semibold text-teal-400 mb-3 flex items-center">
+                                    <i class="fa-solid fa-chalkboard-user mr-2"></i> Equipo Docente
+                                </h4>
+                                <div class="flex flex-col sm:flex-row gap-3">
+                                    ${event.maestros.pre ? `<div class="bg-slate-800/80 border border-slate-700/50 rounded-lg px-4 py-2 flex-1 shadow-inner">
+                                        <span class="block text-[10px] text-teal-500 font-bold uppercase tracking-wider mb-1">Pre-Adolescentes</span>
+                                        <span class="text-sm text-slate-200">${event.maestros.pre}</span>
+                                    </div>` : ''}
+                                    ${event.maestros.ado ? `<div class="bg-slate-800/80 border border-slate-700/50 rounded-lg px-4 py-2 flex-1 shadow-inner">
+                                        <span class="block text-[10px] text-teal-500 font-bold uppercase tracking-wider mb-1">Adolescentes</span>
+                                        <span class="text-sm text-slate-200">${event.maestros.ado}</span>
+                                    </div>` : ''}
+                                </div>
+                            </div>`;
+                        }
+                    }
+
                     if (event.type === 'class') {
                         html += `
-                            <div id="${id}" class="bg-slate-900/50 backdrop-blur-md rounded-2xl shadow-xl border border-white/10 overflow-hidden hover:border-teal-500/50 transition-colors duration-300 smooth-scroll group">
+                            <div id="${id}" class="bg-slate-900/50 backdrop-blur-md rounded-2xl shadow-xl border border-white/10 overflow-hidden hover:border-teal-500/50 transition-colors duration-300 smooth-scroll group ${highlightClasses}">
                                 <div class="bg-white/5 px-6 py-4 border-b border-white/10 flex justify-between items-center flex-wrap gap-3">
-                                    <h3 class="text-xl font-bold text-white group-hover:text-teal-300 transition-colors">${event.title}</h3>
+                                    <div class="flex items-center gap-3">
+                                        ${badgeHtml}
+                                        <h3 class="text-xl font-bold text-white group-hover:text-teal-300 transition-colors">${event.title}</h3>
+                                    </div>
                                     <span class="inline-flex items-center bg-teal-500/20 border border-teal-500/30 text-teal-200 text-xs font-semibold px-3 py-1.5 rounded-full">
                                         <i class="fa-regular fa-calendar mr-2"></i> Viernes, ${formattedDate}
                                     </span>
@@ -349,24 +434,31 @@
                                             <p class="text-sm text-slate-300 leading-relaxed">${event.desafio}</p>
                                         </div>
                                     </div>
+                                    ${maestrosHtml}
                                 </div>
                             </div>
                         `;
                     } else {
                         html += `
-                            <div id="${id}" class="bg-gradient-to-r from-teal-900/40 to-blue-900/40 rounded-2xl shadow-xl border border-teal-500/30 p-6 flex flex-col sm:flex-row items-center gap-5 smooth-scroll hover:border-teal-400/60 transition-colors">
-                                <div class="w-14 h-14 rounded-full bg-teal-500/20 border border-teal-500/30 flex justify-center items-center text-teal-300 text-2xl flex-shrink-0 shadow-[0_0_15px_rgba(45,212,191,0.2)]">
-                                    <i class="fa-solid ${event.icon}"></i>
+                            <div id="${id}" class="bg-gradient-to-r ${isUpcoming ? 'from-blue-900/60 to-teal-900/60' : 'from-teal-900/40 to-blue-900/40'} rounded-2xl shadow-xl border ${isUpcoming ? 'border-blue-400/60' : 'border-teal-500/30'} p-6 smooth-scroll group ${highlightClasses}">
+                                <div class="flex flex-col sm:flex-row items-center gap-5">
+                                    <div class="w-14 h-14 rounded-full bg-teal-500/20 border border-teal-500/30 flex justify-center items-center text-teal-300 text-2xl flex-shrink-0 shadow-[0_0_15px_rgba(45,212,191,0.2)]">
+                                        <i class="fa-solid ${event.icon}"></i>
+                                    </div>
+                                    <div class="text-center sm:text-left flex-1">
+                                        <div class="flex items-center justify-center sm:justify-start gap-2 mb-1">
+                                            ${badgeHtml}
+                                            <h3 class="text-xl font-bold text-white">${event.title}</h3>
+                                        </div>
+                                        <p class="text-teal-200 text-sm">${event.desc}</p>
+                                    </div>
+                                    <div class="sm:ml-auto whitespace-nowrap mt-3 sm:mt-0">
+                                        <span class="inline-flex items-center bg-slate-900/80 text-teal-300 border border-teal-500/40 text-xs font-semibold px-4 py-2 rounded-full shadow-sm">
+                                            <i class="fa-regular fa-calendar mr-2"></i> Viernes, ${formattedDate}
+                                        </span>
+                                    </div>
                                 </div>
-                                <div class="text-center sm:text-left">
-                                    <h3 class="text-xl font-bold text-white mb-1">${event.title}</h3>
-                                    <p class="text-teal-200 text-sm">${event.desc}</p>
-                                </div>
-                                <div class="sm:ml-auto whitespace-nowrap mt-3 sm:mt-0">
-                                    <span class="inline-flex items-center bg-slate-900/80 text-teal-300 border border-teal-500/40 text-xs font-semibold px-4 py-2 rounded-full shadow-sm">
-                                        <i class="fa-regular fa-calendar mr-2"></i> Viernes, ${formattedDate}
-                                    </span>
-                                </div>
+                                ${maestrosHtml}
                             </div>
                         `;
                     }
@@ -378,8 +470,6 @@
             container.innerHTML = html;
         }
 
-        let currentMonth = 6; // July (0-indexed)
-        let currentYear = 2026;
         const monthNames = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
 
         function changeMonth(dir) {
@@ -395,7 +485,6 @@
             
             if (modal.classList.contains('hidden')) {
                 modal.classList.remove('hidden');
-                // trigger reflow
                 void modal.offsetWidth;
                 modal.classList.remove('opacity-0');
                 content.classList.remove('scale-95');
@@ -406,21 +495,21 @@
             }
         }
 
-        function jumpToDate(dateStr) {
+        function jumpToDate(dateStr, showEffect = true) {
             const el = document.getElementById(`event-${dateStr}`);
             if (el) {
-                // If mobile modal is open, close it
                 if (!document.getElementById('mobile-calendar-modal').classList.contains('hidden')) {
                     toggleMobileCalendar();
                 }
                 
                 el.scrollIntoView({ behavior: 'smooth' });
                 
-                // Add a temporary highlight effect adapted to dark mode
-                el.classList.add('ring-4', 'ring-teal-400', 'ring-offset-2', 'ring-offset-slate-900');
-                setTimeout(() => {
-                    el.classList.remove('ring-4', 'ring-teal-400', 'ring-offset-2', 'ring-offset-slate-900');
-                }, 2000);
+                if (showEffect) {
+                    el.classList.add('ring-4', 'ring-teal-400', 'ring-offset-2', 'ring-offset-slate-900');
+                    setTimeout(() => {
+                        el.classList.remove('ring-4', 'ring-teal-400', 'ring-offset-2', 'ring-offset-slate-900');
+                    }, 2000);
+                }
             }
         }
 
@@ -438,19 +527,21 @@
             
             let html = '';
             
-            // Empty slots before first day
             for (let i = 0; i < firstDay; i++) {
                 html += `<div class="p-2"></div>`;
             }
 
-            // Days
             for (let i = 1; i <= daysInMonth; i++) {
                 const dateStr = `${currentYear}-${String(currentMonth + 1).padStart(2, '0')}-${String(i).padStart(2, '0')}`;
                 
                 const planEvent = planData.find(e => e.date === dateStr);
                 
                 if (planEvent) {
-                    html += `<div onclick="jumpToDate('${dateStr}')" class="p-2 rounded-lg calendar-day has-event text-white bg-teal-500/20 border border-teal-500/30 hover:bg-teal-500/40 hover:shadow-[0_0_10px_rgba(45,212,191,0.5)] transition-all" title="${planEvent.title}">${i}</div>`;
+                    // Highlight if it's the active event (Today or Next)
+                    const isActive = activeEvent && activeEvent.date === dateStr;
+                    const activeClasses = isActive ? "bg-blue-500/40 border-blue-400 shadow-[0_0_10px_rgba(59,130,246,0.6)]" : "bg-teal-500/20 border-teal-500/30";
+                    
+                    html += `<div onclick="jumpToDate('${dateStr}')" class="p-2 rounded-lg calendar-day has-event text-white border hover:bg-teal-500/40 hover:shadow-[0_0_10px_rgba(45,212,191,0.5)] transition-all ${activeClasses}" title="${planEvent.title}">${i}</div>`;
                 } else {
                     html += `<div class="p-2 rounded-lg text-slate-400 hover:bg-white/10 transition-colors">${i}</div>`;
                 }
@@ -463,6 +554,13 @@
         document.addEventListener('DOMContentLoaded', () => {
             renderTimeline();
             renderCalendar();
+            
+            // Navegar automáticamente a la clase actual o próxima tras cargar la página
+            if (activeEvent) {
+                setTimeout(() => {
+                    jumpToDate(activeEvent.date, false);
+                }, 800); // Pequeño retraso para que todo termine de renderizar
+            }
         });
 
     </script>
