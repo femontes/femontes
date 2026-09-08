@@ -1,568 +1,392 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Planificación Semestral: Serie "Hechos"</title>
+    <title>Amistoso Dichato - Inscripciones</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700;800&display=swap');
-        body { font-family: 'Raleway', sans-serif; scroll-behavior: smooth; }
-        .calendar-day.has-event { cursor: pointer; font-weight: bold; position: relative; }
-        .calendar-day.has-event::after {
-            content: '';
-            position: absolute;
-            bottom: 4px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 6px;
-            height: 6px;
-            background-color: #2dd4bf; /* Teal 400 for dark mode */
-            border-radius: 50%;
-        }
-        .calendar-day:hover.has-event { background-color: rgba(45, 212, 191, 0.2); }
-        .glass-panel { background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); }
-        .smooth-scroll { scroll-margin-top: 100px; }
+        body { font-family: 'Raleway', sans-serif; }
+        .bg-calipso { background-color: #00A8C6; }
+        .text-calipso { color: #00A8C6; }
+        .border-calipso { border-color: #00A8C6; }
+        .bg-blue-dark { background-color: #0F2041; }
+        .text-blue-dark { color: #0F2041; }
+        .bg-dark { background-color: #0a1122; }
     </style>
 </head>
-<body class="bg-gradient-to-br from-slate-950 via-teal-950 to-blue-950 text-slate-200 min-h-screen">
-
-    <header class="relative z-10 pt-12 pb-10 border-b border-white/10 bg-black/20 backdrop-blur-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
-            
-            <img src="https://raw.githubusercontent.com/femontes/femontes/refs/heads/main/LOGO%20HOME%20PREADOLESCENTES.png" alt="Logo Pre-Adolescentes" class="h-32 md:h-40 mb-6 drop-shadow-2xl object-contain">
-            
-            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-3 text-white drop-shadow-md text-center">
-                Serie "Hechos"
-            </h1>
-            <p class="text-xl font-light text-teal-200 mb-8 text-center">Planificación Semestral (Julio - Diciembre 2026)</p>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm bg-slate-900/60 backdrop-blur-md p-6 rounded-2xl border border-white/10 shadow-2xl max-w-4xl w-full">
-                <div>
-                    <h3 class="font-bold text-teal-400 mb-3 uppercase tracking-wide"><i class="fa-solid fa-clock mr-2"></i>Estructura por Clase (30 min)</h3>
-                    <ul class="space-y-2 text-slate-300">
-                        <li><span class="font-semibold text-teal-200">5 min:</span> Dinámica Base (Debate)</li>
-                        <li><span class="font-semibold text-teal-200">15 min:</span> La Razón / Biblia</li>
-                        <li><span class="font-semibold text-teal-200">10 min:</span> Desafío Práctico</li>
-                    </ul>
+<body class="bg-gray-50 text-gray-800 antialiased selection:bg-calipso selection:text-white">
+    
+    <!-- Header / Nav -->
+    <nav class="bg-white sticky top-0 z-50 border-b border-gray-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <img src="https://raw.githubusercontent.com/femontes/femontes/main/F%C3%9ATBOL.png?raw=true" alt="Logo" class="h-12 w-auto">
+                    <span class="font-black text-2xl tracking-tighter text-blue-dark">AMISTOSO<span class="text-calipso">DICHATO</span></span>
                 </div>
-                <div>
-                    <h3 class="font-bold text-teal-400 mb-3 uppercase tracking-wide"><i class="fa-solid fa-hands-holding-child mr-2"></i>Transversal: El Servicio Práctico</h3>
-                    <p class="text-slate-300 leading-relaxed">Cada viernes, un equipo tendrá responsabilidades (barrer, ordenar, lavar loza, limpiar baños). Objetivo: Aprender que ser iglesia implica servir (Hechos 6).</p>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#detalles" class="text-blue-dark hover:text-calipso px-3 py-2 rounded-md text-sm font-bold transition-colors">Detalles</a>
+                        <a href="#inscripcion" class="bg-calipso hover:bg-blue-dark text-white px-6 py-2.5 rounded-full text-sm font-bold shadow-lg transition-all transform hover:scale-105">Inscríbete Ahora</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </header>
+    </nav>
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex flex-col lg:flex-row gap-8 relative">
+    <!-- Hero Section -->
+    <section class="relative bg-white pt-20 pb-32 overflow-hidden">
+        <div class="absolute inset-0 z-0 opacity-10">
+            <img src="https://raw.githubusercontent.com/femontes/femontes/main/02-patron-grafico.png?raw=true" alt="Pattern" class="w-full h-full object-cover">
+        </div>
         
-        <!-- Main Content Area (Timeline) -->
-        <main class="w-full lg:w-3/4 space-y-12" id="timeline-container">
-            <!-- JavaScript will inject content here -->
-        </main>
-
-        <!-- Desktop Sidebar -->
-        <aside class="hidden lg:block lg:w-1/4 relative">
-            <div class="sticky top-8 bg-slate-900/60 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/10 overflow-hidden" id="desktop-calendar-container">
-                <div class="bg-white/5 border-b border-white/10 text-white p-4 flex justify-between items-center">
-                    <button onclick="changeMonth(-1)" class="hover:bg-white/10 p-2 rounded-full transition"><i class="fa-solid fa-chevron-left"></i></button>
-                    <h3 id="cal-month-year" class="font-bold text-lg tracking-wide text-teal-100">Julio 2026</h3>
-                    <button onclick="changeMonth(1)" class="hover:bg-white/10 p-2 rounded-full transition"><i class="fa-solid fa-chevron-right"></i></button>
-                </div>
-                <div class="p-5">
-                    <div class="grid grid-cols-7 gap-1 text-center text-xs font-semibold text-teal-500/70 mb-3">
-                        <div>Do</div><div>Lu</div><div>Ma</div><div>Mi</div><div>Ju</div><div>Vi</div><div>Sa</div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="lg:grid lg:grid-cols-12 lg:gap-8 items-center">
+                <div class="sm:text-center md:max-w-2xl md:mx-auto lg:col-span-6 lg:text-left">
+                    <div class="inline-flex items-center rounded-full px-4 py-1.5 text-sm font-bold bg-blue-50 text-calipso mb-6 border border-blue-100">
+                        <span class="flex h-2 w-2 rounded-full bg-calipso mr-2 animate-pulse"></span>
+                        CUPOS LIMITADOS
                     </div>
-                    <div id="calendar-grid" class="grid grid-cols-7 gap-1 text-center text-sm">
-                        <!-- JS Calendar injection -->
-                    </div>
-                    <div class="mt-5 text-xs text-slate-400 border-t border-white/10 pt-4 flex flex-col gap-2">
-                        <div class="flex items-center gap-2">
-                            <span class="w-2 h-2 rounded-full bg-teal-400 inline-block shadow-[0_0_8px_rgba(45,212,191,0.8)]"></span>
-                            <span>Día con actividad</span>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <span class="w-2 h-2 rounded-full bg-blue-500 inline-block shadow-[0_0_8px_rgba(59,130,246,0.8)]"></span>
-                            <span>Clase actual o próxima</span>
-                        </div>
+                    <h1 class="text-4xl tracking-tight font-black text-blue-dark sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl mb-6">
+                        AMISTOSO PARA DEPORTISTAS DE <span class="text-calipso">BAJO RENDIMIENTO,</span> PERO ALTA AURA.
+                    </h1>
+                    <p class="mt-3 text-base text-gray-600 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0 font-medium">
+                        Demuestra tu (poco pero honrado) talento en la cancha. ⚽ <br>
+                        Cumplamos el sueño de jugar un 11v11 para iniciar octubre con todo. 🔥
+                    </p>
+                    <div class="mt-8 sm:max-w-lg sm:mx-auto sm:text-center lg:text-left lg:mx-0">
+                        <a href="#inscripcion" class="inline-flex items-center justify-center px-8 py-4 border border-transparent text-base font-bold rounded-full text-white bg-blue-dark hover:bg-calipso shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 w-full sm:w-auto">
+                            ¡Asegurar mi cupo!
+                            <svg class="ml-2 -mr-1 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </a>
                     </div>
                 </div>
-            </div>
-        </aside>
-
-    </div>
-
-    <!-- Mobile Calendar Floating Button -->
-    <button onclick="toggleMobileCalendar()" class="lg:hidden fixed bottom-6 right-6 bg-teal-500 text-slate-900 w-14 h-14 rounded-full shadow-[0_0_15px_rgba(45,212,191,0.5)] flex items-center justify-center text-2xl z-40 hover:bg-teal-400 transition-transform active:scale-95">
-        <i class="fa-regular fa-calendar-days"></i>
-    </button>
-
-    <!-- Mobile Calendar Modal -->
-    <div id="mobile-calendar-modal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden opacity-0 transition-opacity flex items-center justify-center p-4">
-        <div class="bg-slate-900 border border-white/10 w-full max-w-sm rounded-3xl shadow-2xl overflow-hidden transform scale-95 transition-transform" id="mobile-modal-content">
-            <div class="bg-white/5 border-b border-white/10 text-white p-5 flex justify-between items-center relative">
-                <button onclick="changeMonth(-1)" class="p-2 hover:bg-white/10 rounded-full transition"><i class="fa-solid fa-chevron-left"></i></button>
-                <h3 id="mobile-cal-month-year" class="font-bold text-lg tracking-wide text-teal-100">Julio 2026</h3>
-                <button onclick="changeMonth(1)" class="p-2 hover:bg-white/10 rounded-full transition"><i class="fa-solid fa-chevron-right"></i></button>
-                <button onclick="toggleMobileCalendar()" class="absolute -top-4 -right-4 bg-slate-800 border border-white/20 text-white w-10 h-10 rounded-full shadow-lg flex items-center justify-center hover:bg-slate-700 transition"><i class="fa-solid fa-times"></i></button>
-            </div>
-            <div class="p-6">
-                <div class="grid grid-cols-7 gap-1 text-center text-xs font-semibold text-teal-500/70 mb-3">
-                    <div>Do</div><div>Lu</div><div>Ma</div><div>Mi</div><div>Ju</div><div>Vi</div><div>Sa</div>
-                </div>
-                <div id="mobile-calendar-grid" class="grid grid-cols-7 gap-2 text-center text-sm">
-                    <!-- JS Calendar injection -->
+                <div class="mt-12 relative sm:max-w-lg sm:mx-auto lg:mt-0 lg:max-w-none lg:mx-0 lg:col-span-6 lg:flex lg:items-center lg:justify-center">
+                    <div class="relative mx-auto w-full rounded-2xl lg:max-w-md">
+                        <img class="w-full relative z-10 animate-[spin_20s_linear_infinite] drop-shadow-2xl" src="https://raw.githubusercontent.com/femontes/femontes/main/pelota.png?raw=true" alt="Balón de Fútbol">
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <!-- Info Section -->
+    <section id="detalles" class="py-20 bg-gray-50 border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-black text-blue-dark tracking-tight sm:text-4xl">TODO LO QUE NECESITAS SABER</h2>
+                <div class="h-1 w-24 bg-calipso mx-auto mt-4 rounded-full"></div>
+                
+                <div class="mt-8 max-w-2xl mx-auto bg-red-50 border-2 border-red-200 rounded-xl p-4 shadow-sm">
+                    <p class="text-red-700 font-bold flex items-center justify-center gap-2">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        Costo de la cancha: $64.000 (Se divide entre todos los asistentes)
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- Date -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow border border-gray-100 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-calipso opacity-10 rounded-full group-hover:scale-150 transition-transform duration-500"></div>
+                    <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 text-calipso">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-dark mb-3">Fecha y Hora</h3>
+                    <p class="text-gray-600 font-medium">Viernes 2 de Octubre</p>
+                    <p class="text-gray-500 text-sm mt-1">21:00 Horas (Llegar 20:30)</p>
+                </div>
+
+                <!-- Location -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow border border-gray-100 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-calipso opacity-10 rounded-full group-hover:scale-150 transition-transform duration-500"></div>
+                    <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 text-calipso">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-dark mb-3">Lugar del Encuentro</h3>
+                    <p class="text-gray-600 font-medium">Estadio de Dichato</p>
+                    <p class="text-gray-500 text-sm mt-1">Cancha de pasto sintético 11x11.</p>
+                </div>
+
+                <!-- Modality -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow border border-gray-100 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-calipso opacity-10 rounded-full group-hover:scale-150 transition-transform duration-500"></div>
+                    <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 text-calipso">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-dark mb-3">Formato</h3>
+                    <p class="text-gray-600 font-medium">Fútbol 11 vs 11</p>
+                    <p class="text-gray-500 text-sm mt-1">Cada equipo debe equiparse de un color</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Motivacion / Imagen Section -->
+    <section class="py-20 bg-white overflow-hidden border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2">
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl transform -rotate-2 hover:rotate-0 transition-transform duration-500 border-8 border-white">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-blue-dark/30 to-transparent z-10 pointer-events-none"></div>
+                        <img src="https://raw.githubusercontent.com/femontes/femontes/refs/heads/main/4e9daf7c-2aea-40a8-bf54-310eb8ebac96.jpg" alt="Ambiente Futbolero" class="w-full h-auto object-cover relative z-0 hover:scale-105 transition-transform duration-700">
+                    </div>
+                </div>
+                <div class="lg:w-1/2 text-center lg:text-left">
+                    <h2 class="text-3xl font-black text-blue-dark tracking-tight sm:text-4xl mb-6 uppercase">Más que un partido, <span class="text-calipso">una experiencia</span></h2>
+                    <p class="text-lg text-gray-600 mb-6 font-medium leading-relaxed">
+                        La idea es pasarla bien, reírnos, compartir y bendecir a otros a través del balong.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mt-8">
+                        <div class="flex -space-x-4">
+                            <!-- Avatares decorativos -->
+                            <img class="w-12 h-12 rounded-full border-2 border-white object-cover shadow-sm" src="https://i.pravatar.cc/100?img=11" alt="Jugador">
+                            <img class="w-12 h-12 rounded-full border-2 border-white object-cover shadow-sm" src="https://i.pravatar.cc/100?img=12" alt="Jugador">
+                            <img class="w-12 h-12 rounded-full border-2 border-white object-cover shadow-sm" src="https://i.pravatar.cc/100?img=13" alt="Jugador">
+                            <div class="w-12 h-12 rounded-full border-2 border-white bg-gray-100 flex items-center justify-center text-xs font-bold text-gray-600 shadow-sm">+20</div>
+                        </div>
+                        <span class="text-sm font-bold text-gray-500">Varios ya están calentando motores...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stadium Section -->
+    <section id="estadio" class="py-20 bg-dark text-white relative overflow-hidden">
+        <!-- Banner No Picotas -->
+        <div class="absolute top-0 left-0 w-full bg-red-600 py-3 z-20 border-b-4 border-yellow-400 overflow-hidden shadow-[0_5px_15px_rgba(220,38,38,0.5)]">
+            <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <img src="https://raw.githubusercontent.com/femontes/femontes/refs/heads/main/Soccer%20Fail%20GIF.gif" alt="Soccer Fail GIF" class="h-20 w-20 rounded-full border-2 border-white object-cover shadow-lg shrink-0">
+                <p class="font-extrabold text-white text-xl sm:text-2xl text-center uppercase tracking-widest drop-shadow-md">
+                    ¡OJO! No se aceptan picotas ni mechas cortas, <span class="text-yellow-300">¡NO ES A MUERTE!</span> 😜
+                </p>
+            </div>
+        </div>
+
+        <div class="absolute inset-0 z-0 pt-28">
+            <img src="https://github.com/femontes/femontes/blob/main/estadio%20dichato.jpeg?raw=true" alt="Estadio Dichato" class="w-full h-full object-cover opacity-30">
+            <div class="absolute inset-0 bg-gradient-to-b from-dark via-dark/80 to-dark"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-32">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-black text-white tracking-tight sm:text-4xl">EL ESCENARIO</h2>
+                <p class="mt-4 text-xl text-gray-300">Un recinto de primer nivel para un partido de primer nivel (o casi).</p>
+            </div>
+            <div class="rounded-3xl overflow-hidden shadow-2xl border border-gray-700 aspect-w-16 aspect-h-9 md:aspect-h-7">
+                <img src="https://github.com/femontes/femontes/blob/main/estadio%20dichato.jpeg?raw=true" alt="Estadio Dichato Vista Completa" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+            </div>
+        </div>
+    </section>
+
+    <!-- Form Section -->
+    <section id="inscripcion" class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100 flex flex-col lg:flex-row">
+                
+                <div class="bg-blue-dark lg:w-5/12 p-10 md:p-16 flex flex-col justify-between relative overflow-hidden">
+                    <div class="absolute inset-0 z-0 opacity-20">
+                        <img src="https://raw.githubusercontent.com/femontes/femontes/main/03-fondo-hero-16x9.png?raw=true" alt="Fondo" class="w-full h-full object-cover mix-blend-overlay">
+                    </div>
+                    <div class="relative z-10">
+                        <h3 class="text-3xl font-black text-white mb-4">ASEGURA TU PUESTO</h3>
+                        <p class="text-blue-100 text-lg mb-8 leading-relaxed">Completa tus datos para confirmar tu asistencia. Recuerda que los cupos son limitados para armar los dos equipos.</p>
+                        
+                        <ul class="space-y-5">
+                            <li class="flex items-start">
+                                <svg class="h-6 w-6 text-calipso mr-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                <span class="text-blue-50 font-medium">Llega al menos 30 min antes.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-6 w-6 text-calipso mr-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                <span class="text-blue-50 font-medium">Lleva hidratación personal.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-6 w-6 text-calipso mr-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                <span class="text-blue-50 font-medium">Buena onda y respeto ante todo.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="lg:w-7/12 p-10 md:p-16 bg-gray-50">
+                    <form id="inscripcionForm" action="https://docs.google.com/forms/d/e/1FAIpQLSe-0hV7oO_dK1_cW3x_4f3Z9R09vG0q162n97tH0mH3g0u1wA/formResponse" method="POST" target="hidden_iframe" class="space-y-6">
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-bold text-gray-700 mb-2">Nombre Completo <span class="text-red-500">*</span></label>
+                                <input type="text" name="entry.1706606346" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-calipso focus:border-transparent transition-all bg-white text-gray-900" placeholder="Ej: Juan Pérez">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-gray-700 mb-2">Teléfono / WhatsApp <span class="text-red-500">*</span></label>
+                                <input type="tel" name="entry.502844874" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-calipso focus:border-transparent transition-all bg-white text-gray-900" placeholder="+56 9...">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 mb-2">Correo Electrónico <span class="text-red-500">*</span></label>
+                            <input type="email" name="entry.1018597022" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-calipso focus:border-transparent transition-all bg-white text-gray-900" placeholder="tu@correo.com">
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-bold text-gray-700 mb-2">Posición <span class="text-red-500">*</span></label>
+                                <select name="entry.1228461742" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-calipso focus:border-transparent transition-all bg-white text-gray-900 appearance-none">
+                                    <option value="" disabled selected>Selecciona tu posición...</option>
+                                    <option value="Portero">Portero</option>
+                                    <option value="Defensa">Defensa</option>
+                                    <option value="Mediocampista">Mediocampista</option>
+                                    <option value="Delantero">Delantero</option>
+                                    <option value="Comodín (Juego donde falte)">Comodín (Juego donde falte)</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-gray-700 mb-2">Nivel Estimado</label>
+                                <select name="entry.1994519985" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-calipso focus:border-transparent transition-all bg-white text-gray-900 appearance-none">
+                                    <option value="Amateur / Recreativo">Amateur / Recreativo</option>
+                                    <option value="Paupérrimo (Alta Aura)">Paupérrimo (Alta Aura)</option>
+                                    <option value="Intermedio">Intermedio</option>
+                                    <option value="Avanzado (Juego ligas)">Avanzado (Juego ligas)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 mb-2">¿Tienes auto o necesitas llevar a alguien? (Opcional)</label>
+                            <textarea name="entry.861775791" rows="3" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-calipso focus:border-transparent transition-all bg-white text-gray-900 resize-none" placeholder="Ej: Tengo 3 cupos desde Concepción..."></textarea>
+                        </div>
+
+                        <div class="pt-4">
+                            <button type="submit" id="submitBtn" class="w-full bg-blue-dark hover:bg-calipso text-white font-black py-4 px-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex justify-center items-center gap-3 text-lg">
+                                <span>CONFIRMAR INSCRIPCIÓN</span>
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <div id="successModal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 hidden transition-opacity duration-300 backdrop-blur-sm">
+                    <div class="bg-white rounded-2xl p-8 max-w-sm w-full mx-4 transform scale-95 transition-transform duration-300 shadow-2xl relative overflow-hidden">
+                        <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-calipso to-blue-dark"></div>
+                        
+                        <div class="text-center">
+                            <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 shadow-inner">
+                                <svg class="w-10 h-10 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-black text-gray-900 mb-2 tracking-tight">¡LISTO PROFE!</h3>
+                            <p class="text-gray-600 mb-8 text-sm leading-relaxed font-medium">Tu inscripción ha sido confirmada y enviada a la organización. ¡Nos vemos en la cancha para dejarlo todo! ⚽🔥</p>
+                            <button id="closeModalBtn" class="w-full bg-blue-dark hover:bg-calipso text-white font-bold py-3 px-4 rounded-xl transition duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+                                Cerrar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-sm text-gray-400 font-bold">&copy; 2026 Amistoso Dichato. Organizado para disfrutar.</p>
+        </div>
+    </footer>
+
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+
+    <audio id="refereeWhistle" preload="auto">
+        <source src="https://assets.mixkit.co/sfx/preview/mixkit-referee-whistle-blow-316.mp3" type="audio/mpeg">
+        <source src="https://assets.mixkit.co/sfx/preview/mixkit-referee-whistle-blow-316.ogg" type="audio/ogg">
+    </audio>
 
     <script>
-        // Data derived from the PDF content (Actualizado con Maestros)
-        const planData = [
-            // JULIO - AGOSTO
-            {
-                date: "2026-07-31", month: "Julio y Agosto: Los Inicios y el Poder",
-                title: "Clase 1: Fe racional vs. Mito",
-                lema: '"A quienes también, después de haber padecido, se presentó vivo con muchas pruebas indubitables..." (Hechos 1:3a).',
-                debate: "¿Si estuvieran en un juicio, qué pruebas darían de que la resurrección no es un mito como Thor o Zeus?",
-                razon: "El cristianismo se basa en evidencias. Los discípulos pasaron de cobardes a morir por su fe; nadie se deja torturar por algo que sabe que es mentira.",
-                desafio: "Desafiarlos a investigar. Tarea: Preguntarle a un adulto de confianza por qué cree en Dios.",
-                type: "class",
-                maestros: { pre: "Gerardo y Jessie / Josué y Natalia", ado: "Felipe y Daniela / Fabián y Eugenia" }
-            },
-            {
-                date: "2026-08-07", month: "Julio y Agosto: Los Inicios y el Poder",
-                title: "Clase 2: El Espíritu Santo",
-                lema: '"Pero recibiréis poder, cuando haya venido sobre vosotros el Espíritu Santo..." (Hechos 1:8).',
-                debate: '¿Qué hacemos con la gente que dice "yo nunca siento a Dios"? ¿El Espíritu Santo es una emoción?',
-                razon: "Leer Hechos 2:1-13. El Espíritu bajó para darles poder y valentía, no solo una experiencia emocional. Es un ayudador práctico para el día a día.",
-                desafio: 'Identificar un área donde son "cobardes" (hablar de Jesús, enfrentar una mala amistad) y pedirle valentía al Espíritu Santo.',
-                type: "class",
-                maestros: { pre: "Fabián y Eugenia / Gerardo y Jessie", ado: "Josué y Natalia / Felipe y Daniela" }
-            },
-            {
-                date: "2026-08-14", month: "Julio y Agosto: Los Inicios y el Poder",
-                title: "Clase 3: La Iglesia 1.0",
-                lema: '"Y perseveraban en la doctrina de los apóstoles, en la comunión unos con otros..." (Hechos 2:42).',
-                debate: "¿Por qué no podemos simplemente ser cristianos en la casa, viendo prédicas por YouTube?",
-                razon: "La fe cristiana es un deporte de equipo. Una brasa sola se apaga rápido; junta con otras, hace una fogata.",
-                desafio: "Escribirle un mensaje de ánimo a alguien del grupo que no haya asistido ese día.",
-                type: "class",
-                maestros: { pre: "Felipe y Daniela / Gerardo y Jessie", ado: "Fabián y Eugenia / Josué y Natalia" }
-            },
-            {
-                date: "2026-08-21", month: "Julio y Agosto: Los Inicios y el Poder",
-                title: "Clase 4: El poder de Jesús hoy",
-                lema: '"No tengo plata ni oro, pero lo que tengo te doy; en el nombre de Jesucristo de Nazaret, levántate y anda." (Hechos 3:6).',
-                debate: "Si Dios curó a un cojo hace 2000 años, ¿por qué no sana a todos los enfermos hoy?",
-                razon: "El milagro apuntaba a Jesús. Dios sigue sanando, pero a veces su milagro es darnos paz en la enfermedad. El mayor milagro es la salvación.",
-                desafio: "Orar en grupos pequeños por una petición real y difícil de su familia.",
-                type: "class",
-                maestros: { pre: "Josué y Natalia / Gerardo y Jessie", ado: "Felipe y Daniela / Fabián y Eugenia" }
-            },
-            {
-                date: "2026-08-28", month: "Julio y Agosto: Los Inicios y el Poder",
-                title: "Actividad conjunta con los Jóvenes",
-                desc: "Jornada de Integración.",
-                type: "event", icon: "fa-users",
-                maestros: "Todos los maestros"
-            },
-            // SEPTIEMBRE
-            {
-                date: "2026-09-04", month: "Septiembre: Desafíos Internos y Externos",
-                title: "Clase 5: Presión Social",
-                lema: '"Porque no podemos dejar de decir lo que hemos visto y oído." (Hechos 4:20).',
-                debate: "Si mañana fuera ilegal ser cristiano en tu colegio, ¿habría suficientes pruebas en tu comportamiento para acusarte?",
-                razon: 'Pedro y Juan eran amenazados por los "populares". Su secreto: "habían estado con Jesús" (v. 13). La comunión privada da valentía pública.',
-                desafio: "Tomar una decisión firme de no participar en algo incorrecto esta semana aunque haya presión de grupo.",
-                type: "class",
-                maestros: { pre: "Gerardo y Jessie / Josué y Natalia", ado: "Fabián y Eugenia / Felipe y Daniela" }
-            },
-            {
-                date: "2026-09-11", month: "Septiembre: Desafíos Internos y Externos",
-                title: "Visita al Templo",
-                desc: "Servicio General de la Iglesia.",
-                type: "event", icon: "fa-church",
-                maestros: "Todos los maestros"
-            },
-            {
-                date: "2026-09-18", month: "Septiembre: Desafíos Internos y Externos",
-                title: "Feriado Nacional",
-                desc: "Fiestas Patrias. No hay actividad regular.",
-                type: "event", icon: "fa-flag",
-                maestros: "Sin actividad"
-            },
-            {
-                date: "2026-09-25", month: "Septiembre: Desafíos Internos y Externos",
-                title: "Clase 6: La Hipocresía",
-                lema: '"No has mentido a los hombres, sino a Dios." (Hechos 5:4b).',
-                debate: "Si Dios conoce nuestros errores, ¿por qué castigó tan duro a Ananías y Safira?",
-                razon: "Querían aparentar ser más santos de lo que eran. A Dios le molesta la hipocresía más que la debilidad (Ej: fingir en redes sociales).",
-                desafio: "Confesar en oración un área donde están aparentando ser lo que no son.",
-                type: "class",
-                maestros: { pre: "Felipe y Daniela / Gerardo y Jessie", ado: "Josué y Natalia / Fabián y Eugenia" }
-            },
-            // OCTUBRE
-            {
-                date: "2026-10-02", month: "Octubre: Valentía y Rompiendo Moldes",
-                title: "Clase 7: Ser Valiente",
-                lema: '"Señor, no les tomes en cuenta este pecado. Y habiendo dicho esto, durmió." (Hechos 7:60).',
-                debate: '¿Alguna vez te has quedado callado ante el bullying por miedo a que te "cancelen"?',
-                razon: "Esteban dijo la verdad a pesar del miedo y perdonó a sus agresores. Ser valiente es hacer lo correcto aunque asuste.",
-                desafio: "Defender a alguien en el colegio que esté siendo molestado esta semana.",
-                type: "class",
-                maestros: { pre: "Gerardo y Jessie / Josué y Natalia", ado: "Fabián y Eugenia / Felipe y Daniela" }
-            },
-            {
-                date: "2026-10-09", month: "Octubre: Valentía y Rompiendo Moldes",
-                title: "Clase 8: Identidad y Cambio",
-                lema: '"El Señor le dijo: Ve, porque instrumento escogido me es este..." (Hechos 9:15).',
-                debate: '¿Alguien puede ser "demasiado malo" para que Dios lo cambie?',
-                razon: 'Saulo era el "hater" principal. Dios no miró lo que era, sino en lo que se convertiría.',
-                desafio: "Anotar el nombre del compañero más alejado de Dios y comprometerse a orar por él.",
-                type: "class",
-                maestros: { pre: "Josué y Natalia / Gerardo y Jessie", ado: "Felipe y Daniela / Fabián y Eugenia" }
-            },
-            {
-                date: "2026-10-16", month: "Octubre: Valentía y Rompiendo Moldes",
-                title: "Clase 9: Prejuicios",
-                lema: '"En verdad comprendo que Dios no hace acepción de personas." (Hechos 10:34).',
-                debate: "¿Nosotros discriminamos por ropa, dinero o gustos sin darnos cuenta?",
-                razon: "Pedro rompió sus esquemas racistas. El evangelio es para el popular y el marginado por igual.",
-                desafio: "Acercarse a almorzar o hablar en el recreo con alguien que siempre está solo.",
-                type: "class",
-                maestros: { pre: "Gerardo y Jessie / Felipe y Daniela", ado: "Fabián y Eugenia / Josué y Natalia" }
-            },
-            {
-                date: "2026-10-23", month: "Octubre: Valentía y Rompiendo Moldes",
-                title: "Actividad Lúdica",
-                desc: "Juegos en equipo e integración.",
-                type: "event", icon: "fa-gamepad",
-                maestros: "Todos los maestros"
-            },
-            {
-                date: "2026-10-30", month: "Octubre: Valentía y Rompiendo Moldes",
-                title: "Clase 10: Especial Halloween",
-                lema: '"Asimismo muchos de los que habían practicado la magia trajeron los libros y los quemaron..." (Hechos 19:19).',
-                debate: "¿Qué tiene de malo Halloween si solo es un juego de niños?",
-                razon: "En Éfeso se dieron cuenta de que lo oculto es real, no un juego. Somos hijos de luz; celebramos la vida, no el terror.",
-                desafio: 'Planificar cómo ser "luz" este 31 de octubre (noche de juegos sana, etc.).',
-                type: "class",
-                maestros: { pre: "Josué y Natalia / Gerardo y Jessie", ado: "Felipe y Daniela / Fabián y Eugenia" }
-            },
-            // NOVIEMBRE
-            {
-                date: "2026-11-06", month: "Noviembre: Emociones y Realidad",
-                title: "Clase 11: Ansiedad y Problemas",
-                lema: '"Así que Pedro estaba custodiado en la cárcel; pero la iglesia hacía sin cesar oración..." (Hechos 12:5).',
-                debate: "Pedro iba a ser ejecutado pero dormía profundo. ¿Cómo no desesperarse ante un problema gigante?",
-                razon: "Sabía que su vida estaba en manos de Dios y estaba respaldado por oraciones.",
-                desafio: 'Escribir su mayor preocupación actual, entregarla a Dios y decidir "dormir tranquilos".',
-                type: "class",
-                maestros: { pre: "Gerardo y Jessie / Josué y Natalia", ado: "Fabián y Eugenia / Felipe y Daniela" }
-            },
-            {
-                date: "2026-11-13", month: "Noviembre: Emociones y Realidad",
-                title: "Clase 12: Conflictos entre Amigos",
-                lema: '"Y hubo tal desacuerdo entre ellos, que se separaron el uno del otro..." (Hechos 15:39).',
-                debate: "Pablo y Bernabé se pelearon fuerte. ¿Qué pasa cuando nos decepciona un amigo cristiano?",
-                razon: "La Biblia es realista; los cristianos se pelean. El enojo es humano, pero el perdón es cristiano. (Pablo luego se reconcilió).",
-                desafio: "Perdonar a un amigo o pedir perdón si ellos fallaron.",
-                type: "class",
-                maestros: { pre: "Felipe y Daniela / Fabián y Eugenia", ado: "Felipe y Daniela / Fabián y Eugenia" }
-            },
-            {
-                date: "2026-11-20", month: "Noviembre: Emociones y Realidad",
-                title: "Clase 13: La Crisis",
-                lema: '"Pero a medianoche, orando Pablo y Silas, cantaban himnos a Dios..." (Hechos 16:25).',
-                debate: "Si estás triste o pasaste un mal día, ¿es hipócrita cantar en la iglesia?",
-                razon: "Su alabanza en la cárcel no era por emoción, era un arma de guerra que rompió cadenas.",
-                desafio: "Cantar una alabanza en casa en un momento de tristeza o enojo esta semana.",
-                type: "class",
-                maestros: { pre: "Gerardo y Jessie / Felipe y Daniela", ado: "Fabián y Eugenia / Josué y Natalia" }
-            },
-            {
-                date: "2026-11-27", month: "Noviembre: Emociones y Realidad",
-                title: "Clase 14: Fe y Ciencia",
-                lema: '"Porque en él vivimos, y nos movemos, y somos..." (Hechos 17:28).',
-                debate: "Los ateos dicen que la Biblia es para ignorantes. ¿Se puede ser científico y cristiano?",
-                razon: "Pablo debatió con filósofos griegos usando lógica y ciencia. Dios es el creador de la mente.",
-                desafio: "Aprender un argumento histórico o científico rápido en defensa de la fe.",
-                type: "class",
-                maestros: { pre: "Josué y Natalia / Gerardo y Jessie", ado: "Felipe y Daniela / Fabián y Eugenia" }
-            },
-            // DICIEMBRE
-            {
-                date: "2026-12-04", month: "Diciembre: Cierre y Envío",
-                title: "Clase 15: La Apatía",
-                lema: '"Y un joven llamado Eutico... vencido del sueño, cayó del tercer piso abajo..." (Hechos 20:9).',
-                debate: 'Eutico se durmió en el sermón. Honestamente, ¿qué los aburre de la iglesia?',
-                razon: '"Dormirse espiritualmente" produce caídas. Dios nos renueva cuando servimos, no cuando somos meros espectadores.',
-                desafio: "Comprometerse a tomar notas del sermón o servir activamente.",
-                type: "class",
-                maestros: { pre: "Gerardo y Jessie / Josué y Natalia", ado: "Fabián y Eugenia / Felipe y Daniela" }
-            },
-            {
-                date: "2026-12-11", month: "Diciembre: Cierre y Envío",
-                title: "Visita al Templo",
-                desc: "Servicio General. Participación de pre-adolescentes.",
-                type: "event", icon: "fa-church",
-                maestros: "Todos los maestros"
-            },
-            {
-                date: "2026-12-18", month: "Diciembre: Cierre y Envío",
-                title: "Clase 16: El Final Abierto",
-                lema: '"Predicando el reino de Dios y enseñando acerca del Señor Jesucristo..." (Hechos 28:31).',
-                debate: 'Hechos termina de golpe, sin decir "Amén". ¿Por qué Lucas lo dejó por la mitad?',
-                razon: "Porque la historia no terminó. Ellos son Hechos capítulo 29.",
-                desafio: 'Firmar un "pergamino" comprometiéndose a escribir el próximo capítulo de la historia de la iglesia con sus vidas. (Servicio final: Limpieza profunda del salón).',
-                type: "class",
-                maestros: { pre: "Josué y Natalia / Gerardo y Jessie", ado: "Felipe y Daniela / Fabián y Eugenia" }
-            }
-        ];
-
-        // Detección automática de la fecha actual
-        const today = new Date();
-        const localDate = new Date(today.getTime() - (today.getTimezoneOffset() * 60000));
-        const todayStr = localDate.toISOString().split('T')[0];
-        
-        // Encontrar el evento actual o el próximo más cercano
-        let activeEvent = planData.find(e => e.date === todayStr) || planData.find(e => e.date > todayStr);
-        if (!activeEvent) activeEvent = planData[planData.length - 1]; // Si ya terminó el semestre, muestra el último
-
-        let currentMonth = parseInt(activeEvent.date.split('-')[1]) - 1;
-        let currentYear = parseInt(activeEvent.date.split('-')[0]);
-
-        function renderTimeline() {
-            const container = document.getElementById('timeline-container');
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('inscripcionForm');
+            const iframe = document.getElementById('hidden_iframe');
+            const btn = document.getElementById('submitBtn');
+            const modal = document.getElementById('successModal');
+            const closeModalBtn = document.getElementById('closeModalBtn');
+            const whistle = document.getElementById('refereeWhistle');
             
-            // Group data by month theme
-            const grouped = planData.reduce((acc, item) => {
-                if (!acc[item.month]) acc[item.month] = [];
-                acc[item.month].push(item);
-                return acc;
-            }, {});
+            let isSubmitting = false;
 
-            let html = '';
-
-            for (const [monthTheme, events] of Object.entries(grouped)) {
-                html += `
-                    <div class="mb-12">
-                        <h2 class="text-2xl font-bold text-teal-300 border-b border-teal-500/30 pb-3 mb-6 flex items-center">
-                            <i class="fa-solid fa-calendar-check text-teal-500 mr-3"></i> ${monthTheme}
-                        </h2>
-                        <div class="space-y-6">
-                `;
-
-                events.forEach(event => {
-                    const dateObj = new Date(event.date + "T12:00:00"); 
-                    const formattedDate = dateObj.toLocaleDateString('es-ES', { day: 'numeric', month: 'long' });
-                    const id = `event-${event.date}`;
-
-                    // Lógica para resaltar si es hoy o es el próximo
-                    const isToday = event.date === todayStr;
-                    const isUpcoming = activeEvent && event.date === activeEvent.date;
-                    
-                    let highlightClasses = "";
-                    let badgeHtml = "";
-                    
-                    if (isToday) {
-                        highlightClasses = "ring-2 ring-teal-400 ring-offset-2 ring-offset-slate-950";
-                        badgeHtml = `<span class="bg-teal-500 text-slate-900 text-xs font-bold px-3 py-1 rounded-full animate-pulse shadow-[0_0_10px_rgba(45,212,191,0.6)]">¡HOY!</span>`;
-                    } else if (isUpcoming && event.date > todayStr) {
-                        highlightClasses = "border-blue-500/60 shadow-[0_0_15px_rgba(59,130,246,0.15)] bg-slate-900/80";
-                        badgeHtml = `<span class="bg-blue-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-[0_0_10px_rgba(59,130,246,0.5)]">PRÓXIMA</span>`;
-                    }
-
-                    // Construcción del HTML de Maestros
-                    let maestrosHtml = '';
-                    if (event.maestros) {
-                        if (typeof event.maestros === 'string') {
-                            maestrosHtml = `<div class="mt-4 pt-4 border-t border-white/10 flex items-center gap-2 text-sm text-slate-300">
-                                                <i class="fa-solid fa-chalkboard-user text-teal-400"></i> 
-                                                <span class="font-semibold text-teal-200">Asignación:</span> ${event.maestros}
-                                            </div>`;
-                        } else {
-                            maestrosHtml = `
-                            <div class="mt-5 pt-5 border-t border-white/10">
-                                <h4 class="text-sm font-semibold text-teal-400 mb-3 flex items-center">
-                                    <i class="fa-solid fa-chalkboard-user mr-2"></i> Equipo Docente
-                                </h4>
-                                <div class="flex flex-col sm:flex-row gap-3">
-                                    ${event.maestros.pre ? `<div class="bg-slate-800/80 border border-slate-700/50 rounded-lg px-4 py-2 flex-1 shadow-inner">
-                                        <span class="block text-[10px] text-teal-500 font-bold uppercase tracking-wider mb-1">Pre-Adolescentes</span>
-                                        <span class="text-sm text-slate-200">${event.maestros.pre}</span>
-                                    </div>` : ''}
-                                    ${event.maestros.ado ? `<div class="bg-slate-800/80 border border-slate-700/50 rounded-lg px-4 py-2 flex-1 shadow-inner">
-                                        <span class="block text-[10px] text-teal-500 font-bold uppercase tracking-wider mb-1">Adolescentes</span>
-                                        <span class="text-sm text-slate-200">${event.maestros.ado}</span>
-                                    </div>` : ''}
-                                </div>
-                            </div>`;
-                        }
-                    }
-
-                    if (event.type === 'class') {
-                        html += `
-                            <div id="${id}" class="bg-slate-900/50 backdrop-blur-md rounded-2xl shadow-xl border border-white/10 overflow-hidden hover:border-teal-500/50 transition-colors duration-300 smooth-scroll group ${highlightClasses}">
-                                <div class="bg-white/5 px-6 py-4 border-b border-white/10 flex justify-between items-center flex-wrap gap-3">
-                                    <div class="flex items-center gap-3">
-                                        ${badgeHtml}
-                                        <h3 class="text-xl font-bold text-white group-hover:text-teal-300 transition-colors">${event.title}</h3>
-                                    </div>
-                                    <span class="inline-flex items-center bg-teal-500/20 border border-teal-500/30 text-teal-200 text-xs font-semibold px-3 py-1.5 rounded-full">
-                                        <i class="fa-regular fa-calendar mr-2"></i> Viernes, ${formattedDate}
-                                    </span>
-                                </div>
-                                <div class="p-6">
-                                    <div class="mb-6 bg-white/5 border-l-4 border-teal-400 p-4 rounded-r-lg italic text-slate-300 shadow-inner">
-                                        <i class="fa-solid fa-quote-left text-teal-600/50 text-xl mr-2"></i> ${event.lema}
-                                    </div>
-                                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                                        <div class="bg-red-500/10 p-5 rounded-xl border border-red-500/20 hover:bg-red-500/20 transition-colors">
-                                            <h4 class="font-bold text-red-400 flex items-center mb-3"><i class="fa-solid fa-comments text-red-500 mr-2"></i> El Debate (5m)</h4>
-                                            <p class="text-sm text-slate-300 leading-relaxed">${event.debate}</p>
-                                        </div>
-                                        <div class="bg-blue-500/10 p-5 rounded-xl border border-blue-500/20 hover:bg-blue-500/20 transition-colors">
-                                            <h4 class="font-bold text-blue-400 flex items-center mb-3"><i class="fa-solid fa-lightbulb text-blue-500 mr-2"></i> La Razón (15m)</h4>
-                                            <p class="text-sm text-slate-300 leading-relaxed">${event.razon}</p>
-                                        </div>
-                                        <div class="bg-emerald-500/10 p-5 rounded-xl border border-emerald-500/20 hover:bg-emerald-500/20 transition-colors">
-                                            <h4 class="font-bold text-emerald-400 flex items-center mb-3"><i class="fa-solid fa-person-running text-emerald-500 mr-2"></i> El Desafío (10m)</h4>
-                                            <p class="text-sm text-slate-300 leading-relaxed">${event.desafio}</p>
-                                        </div>
-                                    </div>
-                                    ${maestrosHtml}
-                                </div>
-                            </div>
-                        `;
-                    } else {
-                        html += `
-                            <div id="${id}" class="bg-gradient-to-r ${isUpcoming ? 'from-blue-900/60 to-teal-900/60' : 'from-teal-900/40 to-blue-900/40'} rounded-2xl shadow-xl border ${isUpcoming ? 'border-blue-400/60' : 'border-teal-500/30'} p-6 smooth-scroll group ${highlightClasses}">
-                                <div class="flex flex-col sm:flex-row items-center gap-5">
-                                    <div class="w-14 h-14 rounded-full bg-teal-500/20 border border-teal-500/30 flex justify-center items-center text-teal-300 text-2xl flex-shrink-0 shadow-[0_0_15px_rgba(45,212,191,0.2)]">
-                                        <i class="fa-solid ${event.icon}"></i>
-                                    </div>
-                                    <div class="text-center sm:text-left flex-1">
-                                        <div class="flex items-center justify-center sm:justify-start gap-2 mb-1">
-                                            ${badgeHtml}
-                                            <h3 class="text-xl font-bold text-white">${event.title}</h3>
-                                        </div>
-                                        <p class="text-teal-200 text-sm">${event.desc}</p>
-                                    </div>
-                                    <div class="sm:ml-auto whitespace-nowrap mt-3 sm:mt-0">
-                                        <span class="inline-flex items-center bg-slate-900/80 text-teal-300 border border-teal-500/40 text-xs font-semibold px-4 py-2 rounded-full shadow-sm">
-                                            <i class="fa-regular fa-calendar mr-2"></i> Viernes, ${formattedDate}
-                                        </span>
-                                    </div>
-                                </div>
-                                ${maestrosHtml}
-                            </div>
-                        `;
+            if (form) {
+                form.addEventListener('submit', function() {
+                    isSubmitting = true;
+                    if (btn) {
+                        btn.innerHTML = '<span class="animate-pulse">ENVIANDO...</span>';
+                        btn.disabled = true;
+                        btn.classList.add('opacity-75', 'cursor-not-allowed');
                     }
                 });
-
-                html += `</div></div>`;
             }
 
-            container.innerHTML = html;
-        }
-
-        const monthNames = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
-
-        function changeMonth(dir) {
-            currentMonth += dir;
-            if (currentMonth > 11) { currentMonth = 0; currentYear++; }
-            if (currentMonth < 0) { currentMonth = 11; currentYear--; }
-            renderCalendar();
-        }
-
-        function toggleMobileCalendar() {
-            const modal = document.getElementById('mobile-calendar-modal');
-            const content = document.getElementById('mobile-modal-content');
-            
-            if (modal.classList.contains('hidden')) {
-                modal.classList.remove('hidden');
-                void modal.offsetWidth;
-                modal.classList.remove('opacity-0');
-                content.classList.remove('scale-95');
-            } else {
-                modal.classList.add('opacity-0');
-                content.classList.add('scale-95');
-                setTimeout(() => modal.classList.add('hidden'), 300);
+            if (iframe) {
+                iframe.addEventListener('load', function() {
+                    if (isSubmitting) {
+                        showSuccess();
+                        isSubmitting = false;
+                    }
+                });
             }
-        }
 
-        function jumpToDate(dateStr, showEffect = true) {
-            const el = document.getElementById(`event-${dateStr}`);
-            if (el) {
-                if (!document.getElementById('mobile-calendar-modal').classList.contains('hidden')) {
-                    toggleMobileCalendar();
+            function showSuccess() {
+                try {
+                    if (whistle) {
+                        whistle.currentTime = 0;
+                        let playPromise = whistle.play();
+                        if (playPromise !== undefined) {
+                            playPromise.catch(error => console.log("Audio play failed:", error));
+                        }
+                    }
+                } catch(e) {
+                    console.log("Error audio:", e);
                 }
-                
-                el.scrollIntoView({ behavior: 'smooth' });
-                
-                if (showEffect) {
-                    el.classList.add('ring-4', 'ring-teal-400', 'ring-offset-2', 'ring-offset-slate-900');
+
+                if (btn) {
+                    btn.innerHTML = '<span>CONFIRMAR INSCRIPCIÓN</span> <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>';
+                    btn.disabled = false;
+                    btn.classList.remove('opacity-75', 'cursor-not-allowed');
+                }
+
+                if (modal) {
+                    modal.classList.remove('hidden');
                     setTimeout(() => {
-                        el.classList.remove('ring-4', 'ring-teal-400', 'ring-offset-2', 'ring-offset-slate-900');
-                    }, 2000);
+                        modal.classList.remove('opacity-0');
+                        const modalInner = modal.querySelector('div');
+                        if (modalInner) {
+                            modalInner.classList.remove('scale-95');
+                            modalInner.classList.add('scale-100');
+                        }
+                    }, 10);
                 }
-            }
-        }
-
-        function renderCalendar() {
-            const desktopGrid = document.getElementById('calendar-grid');
-            const mobileGrid = document.getElementById('mobile-calendar-grid');
-            const titleD = document.getElementById('cal-month-year');
-            const titleM = document.getElementById('mobile-cal-month-year');
-            
-            titleD.innerText = `${monthNames[currentMonth]} ${currentYear}`;
-            titleM.innerText = `${monthNames[currentMonth]} ${currentYear}`;
-
-            const firstDay = new Date(currentYear, currentMonth, 1).getDay();
-            const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
-            
-            let html = '';
-            
-            for (let i = 0; i < firstDay; i++) {
-                html += `<div class="p-2"></div>`;
-            }
-
-            for (let i = 1; i <= daysInMonth; i++) {
-                const dateStr = `${currentYear}-${String(currentMonth + 1).padStart(2, '0')}-${String(i).padStart(2, '0')}`;
                 
-                const planEvent = planData.find(e => e.date === dateStr);
-                
-                if (planEvent) {
-                    // Highlight if it's the active event (Today or Next)
-                    const isActive = activeEvent && activeEvent.date === dateStr;
-                    const activeClasses = isActive ? "bg-blue-500/40 border-blue-400 shadow-[0_0_10px_rgba(59,130,246,0.6)]" : "bg-teal-500/20 border-teal-500/30";
-                    
-                    html += `<div onclick="jumpToDate('${dateStr}')" class="p-2 rounded-lg calendar-day has-event text-white border hover:bg-teal-500/40 hover:shadow-[0_0_10px_rgba(45,212,191,0.5)] transition-all ${activeClasses}" title="${planEvent.title}">${i}</div>`;
-                } else {
-                    html += `<div class="p-2 rounded-lg text-slate-400 hover:bg-white/10 transition-colors">${i}</div>`;
+                if (form) {
+                    form.reset();
                 }
             }
 
-            desktopGrid.innerHTML = html;
-            mobileGrid.innerHTML = html;
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            renderTimeline();
-            renderCalendar();
-            
-            // Navegar automáticamente a la clase actual o próxima tras cargar la página
-            if (activeEvent) {
-                setTimeout(() => {
-                    jumpToDate(activeEvent.date, false);
-                }, 800); // Pequeño retraso para que todo termine de renderizar
+            if (closeModalBtn) {
+                closeModalBtn.addEventListener('click', function() {
+                    if (modal) {
+                        modal.classList.add('opacity-0');
+                        const modalInner = modal.querySelector('div');
+                        if (modalInner) {
+                            modalInner.classList.remove('scale-100');
+                            modalInner.classList.add('scale-95');
+                        }
+                        setTimeout(() => {
+                            modal.classList.add('hidden');
+                        }, 300);
+                    }
+                });
             }
         });
-
     </script>
 </body>
 </html>
