@@ -14,6 +14,38 @@
         .bg-blue-dark { background-color: #0F2041; }
         .text-blue-dark { color: #0F2041; }
         .bg-dark { background-color: #0a1122; }
+        #inscripcion {scroll-margin-top:6rem;background:#eef5f8}
+        #inscripcionForm {font-size:16px}
+        #inscripcionForm label {font-size:14px}
+        #inscripcionForm input:not([type=checkbox]), #inscripcionForm select, #inscripcionForm textarea {font:inherit;min-height:50px}
+        #inscripcionForm :focus-visible {outline:3px solid #007e98;outline-offset:3px}
+        .form-heading {font-weight:800;color:#00758a;border-bottom:1px solid #cbd8df;padding-bottom:12px;margin-top:28px}
+        .field-help {font-size:14px;color:#526171;margin-top:8px}
+        .consent-row {display:flex;gap:12px;align-items:flex-start;line-height:1.6}
+        .consent-row input {margin-top:4px;width:20px;height:20px;flex-shrink:0;accent-color:#007e98}
+        .trap {position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
+        .status-error,.status-success {padding:16px;border-radius:12px;line-height:1.6;font-weight:600}
+        .status-error {background:#fff1f0;color:#9f2424;border:1px solid #e7b5b5}
+        .status-success {background:#e8f6ed;color:#16552f;border:1px solid #9dcdad}
+        #submitBtn:disabled {opacity:.65;cursor:wait;transform:none}
+        @media(max-width:640px) {nav .text-2xl {font-size:18px}nav img {max-width:40px}#inscripcion .p-10 {padding:26px 20px}#inscripcion {padding:48px 0}}
+        @media(prefers-reduced-motion:reduce) {*{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
+        .fair-play-banner {position:relative;z-index:20;background:#dc2626;border-bottom:4px solid #facc15;padding:24px 0}
+        .fair-play-inner {max-width:1152px;margin:auto;padding:0 24px;display:flex;align-items:center;justify-content:center;gap:32px}
+        .fair-play-image {display:block;width:280px;max-width:100%;height:auto;object-fit:contain;flex-shrink:0;border:3px solid white;border-radius:16px;box-shadow:0 10px 28px #0004}
+        .fair-play-message {font-size:clamp(20px,2.4vw,30px);font-weight:900;line-height:1.4;color:white;text-transform:uppercase;max-width:660px}
+        .fair-play-message span {display:inline-block;color:#fde047;font-size:1.15em;margin-top:8px}
+        @media(max-width:640px) {.fair-play-inner {flex-direction:column;gap:20px;padding:0 20px}.fair-play-image {width:320px}.fair-play-message {text-align:center}}
+        .experience-section {background:white;padding:72px 24px}
+        .experience-inner {max-width:1152px;margin:0 auto;display:grid;grid-template-columns:1.1fr 1fr;align-items:center;gap:52px}
+        .experience-photo {position:relative;overflow:hidden;border:8px solid white;border-radius:24px;background:#0f2041;box-shadow:0 18px 40px #0f20411f;transform:rotate(-1deg);transition:transform .7s ease,box-shadow .7s ease}
+        .experience-photo img {display:block;width:100%;height:auto;transform:scale(1);transform-origin:center;transition:transform .7s ease}
+        @media(hover:hover) and (pointer:fine) {.experience-photo:hover {transform:rotate(0deg) translateY(-4px);box-shadow:0 24px 48px #0f204129}.experience-photo:hover img {transform:scale(1.035)}}
+        @media(prefers-reduced-motion:reduce) {.experience-photo,.experience-photo:hover {transform:none}.experience-photo:hover img {transform:none}}
+        .experience-copy h2 {font-size:clamp(26px,2.7vw,36px);font-weight:900;line-height:1.18;letter-spacing:-.025em;color:#0f2041;margin:0 0 22px;text-wrap:balance}
+        .experience-copy h2 span {color:#00a8c6}
+        .experience-copy p {font-size:18px;line-height:1.7;color:#344b69;margin:0;max-width:480px}
+        @media(max-width:760px) {.experience-section {padding:40px 20px}.experience-inner {grid-template-columns:1fr;gap:28px}.experience-copy h2 {margin-bottom:18px}}
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800 antialiased selection:bg-calipso selection:text-white">
@@ -72,6 +104,16 @@
         </div>
     </section>
 
+    <section id="experiencia" class="experience-section">
+      <div class="experience-inner">
+        <div class="experience-photo"><img src="https://raw.githubusercontent.com/femontes/femontes/refs/heads/main/4e9daf7c-2aea-40a8-bf54-310eb8ebac96.jpg" alt="Amigos compartiendo un partido de fútbol en una cancha iluminada de noche"></div>
+        <div class="experience-copy">
+          <h2>MÁS QUE UN PARTIDO, <span>UNA EXPERIENCIA</span></h2>
+          <p>La idea es pasarla bien, reírnos, compartir y bendecir a otros a través del balón.</p>
+        </div>
+      </div>
+    </section>
+
     <!-- Info Section -->
     <section id="detalles" class="py-20 bg-gray-50 border-t border-gray-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -118,51 +160,19 @@
                     </div>
                     <h3 class="text-xl font-bold text-blue-dark mb-3">Formato</h3>
                     <p class="text-gray-600 font-medium">Fútbol 11 vs 11</p>
-                    <p class="text-gray-500 text-sm mt-1">Cada equipo debe equiparse de un color</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Motivacion / Imagen Section -->
-    <section class="py-20 bg-white overflow-hidden border-t border-gray-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col lg:flex-row items-center gap-12">
-                <div class="lg:w-1/2">
-                    <div class="relative rounded-3xl overflow-hidden shadow-2xl transform -rotate-2 hover:rotate-0 transition-transform duration-500 border-8 border-white">
-                        <div class="absolute inset-0 bg-gradient-to-tr from-blue-dark/30 to-transparent z-10 pointer-events-none"></div>
-                        <img src="https://raw.githubusercontent.com/femontes/femontes/refs/heads/main/4e9daf7c-2aea-40a8-bf54-310eb8ebac96.jpg" alt="Ambiente Futbolero" class="w-full h-auto object-cover relative z-0 hover:scale-105 transition-transform duration-700">
-                    </div>
-                </div>
-                <div class="lg:w-1/2 text-center lg:text-left">
-                    <h2 class="text-3xl font-black text-blue-dark tracking-tight sm:text-4xl mb-6 uppercase">Más que un partido, <span class="text-calipso">una experiencia</span></h2>
-                    <p class="text-lg text-gray-600 mb-6 font-medium leading-relaxed">
-                        La idea es pasarla bien, reírnos, compartir y bendecir a otros a través del balong.
-                    </p>
-                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mt-8">
-                        <div class="flex -space-x-4">
-                            <!-- Avatares decorativos -->
-                            <img class="w-12 h-12 rounded-full border-2 border-white object-cover shadow-sm" src="https://i.pravatar.cc/100?img=11" alt="Jugador">
-                            <img class="w-12 h-12 rounded-full border-2 border-white object-cover shadow-sm" src="https://i.pravatar.cc/100?img=12" alt="Jugador">
-                            <img class="w-12 h-12 rounded-full border-2 border-white object-cover shadow-sm" src="https://i.pravatar.cc/100?img=13" alt="Jugador">
-                            <div class="w-12 h-12 rounded-full border-2 border-white bg-gray-100 flex items-center justify-center text-xs font-bold text-gray-600 shadow-sm">+20</div>
-                        </div>
-                        <span class="text-sm font-bold text-gray-500">Varios ya están calentando motores...</span>
-                    </div>
+                    <p class="text-gray-500 text-sm mt-1">Cada equipo debe equiparse de un color.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Stadium Section -->
-    <section id="estadio" class="py-20 bg-dark text-white relative overflow-hidden">
+    <section id="estadio" class="pb-20 bg-dark text-white relative overflow-hidden">
         <!-- Banner No Picotas -->
-        <div class="absolute top-0 left-0 w-full bg-red-600 py-3 z-20 border-b-4 border-yellow-400 overflow-hidden shadow-[0_5px_15px_rgba(220,38,38,0.5)]">
-            <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-center gap-4">
-                <img src="https://raw.githubusercontent.com/femontes/femontes/refs/heads/main/Soccer%20Fail%20GIF.gif" alt="Soccer Fail GIF" class="h-20 w-20 rounded-full border-2 border-white object-cover shadow-lg shrink-0">
-                <p class="font-extrabold text-white text-xl sm:text-2xl text-center uppercase tracking-widest drop-shadow-md">
-                    ¡OJO! No se aceptan picotas ni mechas cortas, <span class="text-yellow-300">¡NO ES A MUERTE!</span> 😜
-                </p>
+        <div class="fair-play-banner">
+            <div class="fair-play-inner">
+                <img src="https://raw.githubusercontent.com/femontes/femontes/refs/heads/main/Soccer%20Fail%20GIF.gif" alt="Jugada de fútbol con humor" class="fair-play-image">
+                <p class="fair-play-message">¡OJO! No se aceptan picotas ni mechas cortas,<br><span>¡NO ES A MUERTE!</span> 😜</p>
             </div>
         </div>
 
@@ -171,7 +181,7 @@
             <div class="absolute inset-0 bg-gradient-to-b from-dark via-dark/80 to-dark"></div>
         </div>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-12">
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-black text-white tracking-tight sm:text-4xl">EL ESCENARIO</h2>
                 <p class="mt-4 text-xl text-gray-300">Un recinto de primer nivel, para un partido de dudoso nivel.</p>
@@ -213,28 +223,29 @@
                 </div>
 
                 <div class="lg:w-7/12 p-10 md:p-16 bg-gray-50">
-                    <form id="inscripcionForm" action="https://docs.google.com/forms/d/e/1FAIpQLSe-0hV7oO_dK1_cW3x_4f3Z9R09vG0q162n97tH0mH3g0u1wA/formResponse" method="POST" target="hidden_iframe" class="space-y-6">
+                    <form id="inscripcionForm" class="space-y-6">
+<h3 class="text-2xl font-black text-blue-dark">Falta tu nombre en la nómina.</h3><p>Completa los campos con * para inscribirte.</p><h4 class="form-heading">01 · Tus datos</h4>
                         
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
-                                <label class="block text-sm font-bold text-gray-700 mb-2">Nombre Completo <span class="text-red-500">*</span></label>
-                                <input type="text" name="entry.1706606346" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-calipso focus:border-transparent transition-all bg-white text-gray-900" placeholder="Ej: Juan Pérez">
+                                <label for="nombre" class="block text-sm font-bold text-gray-700 mb-2">Nombre Completo <span class="text-red-500">*</span></label>
+                                <input type="text" name="nombre" id="nombre" autocomplete="name" minlength="3" maxlength="100" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-calipso focus:border-transparent transition-all bg-white text-gray-900" placeholder="Ej: Juan Pérez">
                             </div>
                             <div>
-                                <label class="block text-sm font-bold text-gray-700 mb-2">Teléfono / WhatsApp <span class="text-red-500">*</span></label>
-                                <input type="tel" name="entry.502844874" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-calipso focus:border-transparent transition-all bg-white text-gray-900" placeholder="+56 9 1234 5678" value="+56 9 ">
+                                <label for="telefono" class="block text-sm font-bold text-gray-700 mb-2">Teléfono / WhatsApp <span class="text-red-500">*</span></label>
+                                <input type="tel" name="telefono" id="telefono" autocomplete="tel" inputmode="tel" maxlength="20" aria-describedby="phoneHelp" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-calipso focus:border-transparent transition-all bg-white text-gray-900" placeholder="+56 9 1234 5678"><p id="phoneHelp" class="field-help">Tu WhatsApp para coordinar el partido.</p>
                             </div>
                         </div>
 
                         <div>
-                            <label class="block text-sm font-bold text-gray-700 mb-2">Correo Electrónico <span class="text-red-500">*</span></label>
-                            <input type="email" name="entry.1018597022" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-calipso focus:border-transparent transition-all bg-white text-gray-900" placeholder="tu@correo.com">
+                            <label for="correo" class="block text-sm font-bold text-gray-700 mb-2">Correo Electrónico <span class="text-red-500">*</span></label>
+                            <input type="email" name="correo" id="correo" autocomplete="email" maxlength="160" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-calipso focus:border-transparent transition-all bg-white text-gray-900" placeholder="tu@correo.com">
                         </div>
 
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <h4 class="form-heading">02 · Tu juego</h4><div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
-                                <label class="block text-sm font-bold text-gray-700 mb-2">Posición <span class="text-red-500">*</span></label>
-                                <select name="entry.1228461742" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-calipso focus:border-transparent transition-all bg-white text-gray-900 appearance-none">
+                                <label for="posicion" class="block text-sm font-bold text-gray-700 mb-2">Posición <span class="text-red-500">*</span></label>
+                                <select name="posicion" id="posicion" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-calipso focus:border-transparent transition-all bg-white text-gray-900 appearance-none">
                                     <option value="" disabled selected>Selecciona tu posición...</option>
                                     <option value="Portero">Portero</option>
                                     <option value="Defensa">Defensa</option>
@@ -244,8 +255,8 @@
                                 </select>
                             </div>
                             <div>
-                                <label class="block text-sm font-bold text-gray-700 mb-2">Nivel Estimado</label>
-                                <select name="entry.1994519985" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-calipso focus:border-transparent transition-all bg-white text-gray-900 appearance-none">
+                                <label for="nivel" class="block text-sm font-bold text-gray-700 mb-2">Nivel Estimado</label>
+                                <select name="nivel" id="nivel" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-calipso focus:border-transparent transition-all bg-white text-gray-900 appearance-none">
                                     <option value="Amateur / Recreativo">Amateur / Recreativo</option>
                                     <option value="Paupérrimo (Alta Aura)">Paupérrimo (Alta Aura)</option>
                                     <option value="Intermedio">Intermedio</option>
@@ -255,11 +266,14 @@
                         </div>
 
                         <div>
-                            <label class="block text-sm font-bold text-gray-700 mb-2">¿Tienes auto o necesitas llevar a alguien? (Opcional)</label>
-                            <textarea name="entry.861775791" rows="3" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-calipso focus:border-transparent transition-all bg-white text-gray-900 resize-none" placeholder="Ej: Tengo 3 cupos desde Concepción..."></textarea>
+                            <label for="traslado" class="block text-sm font-bold text-gray-700 mb-2">¿Tienes cupos en tu auto o necesitas traslado? (Opcional)</label>
+                            <textarea name="traslado" id="traslado" maxlength="500" rows="3" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-calipso focus:border-transparent transition-all bg-white text-gray-900 resize-none" placeholder="Ej: Tengo 3 cupos desde Concepción..."></textarea>
                         </div>
 
-                        <div class="pt-4">
+                        <label class="consent-row" for="consentimiento"><input id="consentimiento" type="checkbox" name="consentimiento" required><span>Acepto que la organización use mis datos para coordinar este amistoso y contactarme. *</span></label>
+<div aria-hidden="true" class="trap"><label for="website">Sitio web</label><input id="website" name="website" tabindex="-1" autocomplete="off"></div>
+<p id="formStatus" role="status" aria-live="polite" tabindex="-1" hidden></p>
+<noscript>Activa JavaScript para enviar tu inscripción.</noscript><div class="pt-4">
                             <button type="submit" id="submitBtn" class="w-full bg-blue-dark hover:bg-calipso text-white font-black py-4 px-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex justify-center items-center gap-3 text-lg">
                                 <span>CONFIRMAR INSCRIPCIÓN</span>
                                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
@@ -268,24 +282,6 @@
                     </form>
                 </div>
 
-                <div id="successModal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 hidden transition-opacity duration-300 backdrop-blur-sm">
-                    <div class="bg-white rounded-2xl p-8 max-w-sm w-full mx-4 transform scale-95 transition-transform duration-300 shadow-2xl relative overflow-hidden">
-                        <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-calipso to-blue-dark"></div>
-                        
-                        <div class="text-center">
-                            <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 shadow-inner">
-                                <svg class="w-10 h-10 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
-                                </svg>
-                            </div>
-                            <h3 class="text-2xl font-black text-gray-900 mb-2 tracking-tight">¡LISTO PROFE!</h3>
-                            <p class="text-gray-600 mb-8 text-sm leading-relaxed font-medium">Tu inscripción ha sido confirmada y enviada a la organización. ¡Nos vemos en la cancha para dejarlo todo! ⚽🔥</p>
-                            <button id="closeModalBtn" class="w-full bg-blue-dark hover:bg-calipso text-white font-bold py-3 px-4 rounded-xl transition duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
-                                Cerrar
-                            </button>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -293,100 +289,108 @@
     <!-- Footer -->
     <footer class="bg-dark text-white py-8 border-t border-gray-800">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <p class="text-sm text-gray-400 font-bold">&copy; 2026 Amistoso Dichato. Organizado para disfrutar.</p>
+            <p class="text-sm text-gray-400 font-bold">&copy; 2024 Amistoso Dichato. Organizado para disfrutar.</p>
         </div>
     </footer>
 
-    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
 
-    <audio id="refereeWhistle" preload="auto">
-        <source src="https://assets.mixkit.co/sfx/preview/mixkit-referee-whistle-blow-316.mp3" type="audio/mpeg">
-        <source src="https://assets.mixkit.co/sfx/preview/mixkit-referee-whistle-blow-316.ogg" type="audio/ogg">
-    </audio>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const form = document.getElementById('inscripcionForm');
-            const iframe = document.getElementById('hidden_iframe');
-            const btn = document.getElementById('submitBtn');
-            const modal = document.getElementById('successModal');
-            const closeModalBtn = document.getElementById('closeModalBtn');
-            const whistle = document.getElementById('refereeWhistle');
-            
-            let isSubmitting = false;
-
-            if (form) {
-                form.addEventListener('submit', function() {
-                    isSubmitting = true;
-                    if (btn) {
-                        btn.innerHTML = '<span class="animate-pulse">ENVIANDO...</span>';
-                        btn.disabled = true;
-                        btn.classList.add('opacity-75', 'cursor-not-allowed');
-                    }
-                });
-            }
-
-            if (iframe) {
-                iframe.addEventListener('load', function() {
-                    if (isSubmitting) {
-                        showSuccess();
-                        isSubmitting = false;
-                    }
-                });
-            }
-
-            function showSuccess() {
-                try {
-                    if (whistle) {
-                        whistle.currentTime = 0;
-                        let playPromise = whistle.play();
-                        if (playPromise !== undefined) {
-                            playPromise.catch(error => console.log("Audio play failed:", error));
-                        }
-                    }
-                } catch(e) {
-                    console.log("Error audio:", e);
-                }
-
-                if (btn) {
-                    btn.innerHTML = '<span>CONFIRMAR INSCRIPCIÓN</span> <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>';
-                    btn.disabled = false;
-                    btn.classList.remove('opacity-75', 'cursor-not-allowed');
-                }
-
-                if (modal) {
-                    modal.classList.remove('hidden');
-                    setTimeout(() => {
-                        modal.classList.remove('opacity-0');
-                        const modalInner = modal.querySelector('div');
-                        if (modalInner) {
-                            modalInner.classList.remove('scale-95');
-                            modalInner.classList.add('scale-100');
-                        }
-                    }, 10);
-                }
-                
-                if (form) {
-                    form.reset();
-                }
-            }
-
-            if (closeModalBtn) {
-                closeModalBtn.addEventListener('click', function() {
-                    if (modal) {
-                        modal.classList.add('opacity-0');
-                        const modalInner = modal.querySelector('div');
-                        if (modalInner) {
-                            modalInner.classList.remove('scale-100');
-                            modalInner.classList.add('scale-95');
-                        }
-                        setTimeout(() => {
-                            modal.classList.add('hidden');
-                        }, 300);
-                    }
-                });
-            }
-        });
+// Si mantienes un alojamiento externo, configura aquí la URL /exec de Apps Script.
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby-F6qtclJ4PyiQ_kaa3EpUqw5vIhn3QIxqRVZLP6eeLjyKPIrPl5NhU3RjhEQiaHkb/exec';
+const form = document.getElementById('inscripcionForm');
+const button = document.getElementById('submitBtn');
+const statusBox = document.getElementById('formStatus');
+let soundContext;
+function unlockSound() {
+  try {
+    const Audio = window.AudioContext || window.webkitAudioContext;
+    if (!Audio) return;
+    soundContext ||= new Audio();
+    if (soundContext.state === 'suspended') soundContext.resume().catch(()=>{});
+  } catch (_) {}
+}
+function playSound(kind) {
+  try {
+    unlockSound();
+    if (!soundContext) return;
+    const ctx = soundContext;
+    const whistle = kind === 'whistle';
+    const notes = whistle ? [[0, .42], [.52, .65]] : [[0, .055]];
+    for (const [offset, duration] of notes) {
+      const start = ctx.currentTime + offset;
+      const oscillator = ctx.createOscillator();
+      const gain = ctx.createGain();
+      oscillator.type = 'sine';
+      oscillator.frequency.setValueAtTime(whistle ? 2850 : 660, start);
+      oscillator.frequency.linearRampToValueAtTime(whistle ? 3100 : 880, start + duration * .5);
+      gain.gain.setValueAtTime(0, start);
+      gain.gain.linearRampToValueAtTime(whistle ? .07 : .035, start + .012);
+      gain.gain.setValueAtTime(whistle ? .07 : .035, start + duration * .75);
+      gain.gain.exponentialRampToValueAtTime(.0001, start + duration);
+      oscillator.connect(gain); gain.connect(ctx.destination);
+      oscillator.start(start); oscillator.stop(start + duration + .02);
+      oscillator.onended = () => { oscillator.disconnect(); gain.disconnect(); };
+    }
+  } catch (_) {}
+}
+document.addEventListener('pointerdown', unlockSound, {once:true});
+document.addEventListener('keydown', unlockSound, {once:true});
+document.querySelectorAll('a[href="#inscripcion"]').forEach(link => link.addEventListener('click', () => playSound('tap')));
+form.querySelectorAll('select, input[type="checkbox"]').forEach(field => field.addEventListener('change', () => playSound('tap')));
+let busy = false;
+let requestId = '';
+let previousPayload = '';
+function statusMessage(message, success=false) {
+  statusBox.hidden=false; statusBox.textContent=message;
+  statusBox.className=success?'status-success':'status-error'; statusBox.focus();
+}
+function normalizePhone(value) {
+  let digits=value.replace(/[^0-9]/g,'');
+  if(digits.length===9) digits='56'+digits;
+  return /^569[0-9]{8}$/.test(digits)?'+'+digits:'';
+}
+form.telefono.addEventListener('input',()=>form.telefono.setCustomValidity(''));
+form.addEventListener('submit',async event=>{
+  event.preventDefault(); if(busy) return;
+  unlockSound();
+  form.nombre.value=form.nombre.value.trim();
+  const phone=normalizePhone(form.telefono.value);
+  form.telefono.setCustomValidity(phone?'':'Ingresa un celular chileno: +56 9 y 8 dígitos.');
+  if(!form.reportValidity()) return;
+  const data=Object.fromEntries(new FormData(form));
+  data.telefono=phone; data.correo=data.correo.trim().toLowerCase();
+  data.consentimiento=form.consentimiento.checked;
+  const fingerprint=JSON.stringify(data);
+  if(fingerprint!==previousPayload) {requestId=crypto.randomUUID();previousPayload=fingerprint;}
+  data.requestId=requestId;
+  busy=true;button.disabled=true;button.textContent='Guardando inscripción…';form.setAttribute('aria-busy','true');statusBox.hidden=true;
+  try {
+    let result;
+    if(window.google?.script?.run) {
+      result=await new Promise((resolve,reject)=>{
+        const timer=setTimeout(()=>reject(new Error('TIMEOUT')),30000);
+        google.script.run.withSuccessHandler(r=>{clearTimeout(timer);resolve(r);})
+          .withFailureHandler(e=>{clearTimeout(timer);reject(e);}).registrar(data);
+      });
+    } else if(APPS_SCRIPT_URL) {
+      const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),30000);
+      try {
+        const response=await fetch(APPS_SCRIPT_URL,{method:'POST',body:JSON.stringify(data),headers:{'Content-Type':'text/plain;charset=utf-8'},signal:controller.signal});
+        if(!response.ok) throw new Error('HTTP');
+        result=await response.json();
+      } finally {clearTimeout(timer);}
+    } else {
+      statusMessage('Las inscripciones aún no están habilitadas. La organización debe activar el formulario.');return;
+    }
+    if(!result?.ok) {statusMessage(result?.message||'No pudimos guardar tu inscripción. Intenta nuevamente.');return;}
+    statusMessage(result.duplicate?'Tu inscripción ya está registrada. No agregamos una segunda.':'¡Estás en la nómina! Guardamos tu inscripción. Nos vemos en la cancha.',true);
+    form.reset();requestId='';previousPayload='';
+    if (!result.duplicate) playSound('whistle');
+  } catch(error) {
+    statusMessage('No pudimos confirmar el guardado. Tus datos siguen aquí: vuelve a intentar; verificaremos si ya se registraron.');
+  } finally {busy=false;button.disabled=false;button.textContent='CONFIRMAR INSCRIPCIÓN';form.removeAttribute('aria-busy');}
+});
     </script>
 </body>
 </html>
