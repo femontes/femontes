@@ -46,6 +46,16 @@
         .experience-copy h2 span {color:#00a8c6}
         .experience-copy p {font-size:18px;line-height:1.7;color:#344b69;margin:0;max-width:480px}
         @media(max-width:760px) {.experience-section {padding:40px 20px}.experience-inner {grid-template-columns:1fr;gap:28px}.experience-copy h2 {margin-bottom:18px}}
+        .hero-ball-stage {isolation:isolate;display:flex;align-items:center;justify-content:center;max-width:660px!important}
+        .hero-ball-logo {position:relative;display:block;width:90%;max-width:90%;height:auto;object-fit:contain;animation:crest-float 6s ease-in-out infinite;transform-origin:center}
+        @keyframes crest-float {0%,100% {transform:translateY(0)} 50% {transform:translateY(-10px)}}
+        @media(prefers-reduced-motion:reduce) {.hero-ball-logo {animation:none;transform:none}}
+        .experience-section {position:relative;padding-top:112px}
+        .section-ball {position:absolute;left:50%;top:0;transform:translate(-50%,-50%);width:124px;z-index:20;pointer-events:none}
+        .section-ball img {display:block;width:100%;height:auto;animation:section-ball-spin 20s linear infinite;filter:drop-shadow(0 8px 12px #0f204126)}
+        @keyframes section-ball-spin {from {transform:rotate(0deg)} to {transform:rotate(360deg)}}
+        @media(max-width:640px) {.section-ball {width:92px}.experience-section {padding-top:80px}}
+        @media(prefers-reduced-motion:reduce) {.section-ball img {animation:none}}
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800 antialiased selection:bg-calipso selection:text-white">
@@ -96,8 +106,8 @@
                     </div>
                 </div>
                 <div class="mt-12 relative sm:max-w-lg sm:mx-auto lg:mt-0 lg:max-w-none lg:mx-0 lg:col-span-6 lg:flex lg:items-center lg:justify-center">
-                    <div class="relative mx-auto w-full rounded-2xl lg:max-w-md">
-                        <img class="w-full relative z-10 animate-[spin_20s_linear_infinite] drop-shadow-2xl" src="https://raw.githubusercontent.com/femontes/femontes/main/pelota.png?raw=true" alt="Balón de Fútbol">
+                    <div class="relative mx-auto w-full rounded-2xl lg:max-w-md hero-ball-stage">
+                        <img class="hero-ball-logo" src="https://raw.githubusercontent.com/femontes/femontes/refs/heads/main/F%C3%9ATBOL.png" alt="" aria-hidden="true">
                     </div>
                 </div>
             </div>
@@ -105,6 +115,7 @@
     </section>
 
     <section id="experiencia" class="experience-section">
+      <div class="section-ball" aria-hidden="true"><img src="https://raw.githubusercontent.com/femontes/femontes/main/pelota.png?raw=true" alt=""></div>
       <div class="experience-inner">
         <div class="experience-photo"><img src="https://raw.githubusercontent.com/femontes/femontes/refs/heads/main/4e9daf7c-2aea-40a8-bf54-310eb8ebac96.jpg" alt="Amigos compartiendo un partido de fútbol en una cancha iluminada de noche"></div>
         <div class="experience-copy">
